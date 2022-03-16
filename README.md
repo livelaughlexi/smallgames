@@ -1,5 +1,5 @@
 # Small Games
-![minigames](https://invisioncommunity.co.uk/wp-content/uploads/2014/12/minigames-logo.png)
+![minigames](https://seeklogo.com/images/G/google-play-games-logo-D787295C4C-seeklogo.com.png)
 ---
 
 ## A new universe of games !
