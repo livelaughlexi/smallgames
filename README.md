@@ -1,5 +1,5 @@
 # Small Games
-![minigames](https://seeklogo.com/images/G/google-play-games-logo-D787295C4C-seeklogo.com.png)
+![minigames](https://i.pinimg.com/originals/49/96/47/49964743826f910c6d579cb41e843ed3.png)
 ---
 
 ## A new universe of games !
