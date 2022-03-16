@@ -10,3 +10,14 @@
 #### Qu'est-ce donc que Small Games ?
 
 "Small Games" est le projet de quatre étudiants de l'université de Lausanne pour un cours de programmation. Il a pour but de mettre à disposition une plateforme sur laquelle sont proposés des mini-jeux, d'y jouer et de pouvoir comparer ses scores avec ceux de ces amis !
+
+Descriptif du projet :
+
+1. Mini-jeux "PvP"
+2. Ranking "All-Time", "Duel"(A 2 ou possibilité de créer des groupes d'affrontement -> fonctionnalité en plus?)
+3. 
+
+---
+
+### Analyse concurentielle
+
