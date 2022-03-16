@@ -47,6 +47,7 @@ Chacun code son mini-jeu avec une cohérence graphique identitique pour tout le 
 
 ### Description du MVP
 
+Les mini-jeux, ainsi que leurs scores avec la fonctionnalité de "Duel" sont la base de notre projet et ils sont donc indispensables.
 
 ### Mini-Jeux :
 
