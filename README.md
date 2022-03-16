@@ -53,10 +53,14 @@ Un ou deux jeux qui fonctionnent correctement sur lesquels 2 utilisateurs peuven
 
 ### Mini-Jeux :
 
-1. #### Jeu des sept familles
+1. #### Pictionnary
         Description :
 2. #### Pong
         Description :
+        Ressources : Kaboom JS
+
+### Options ajoutables (si le temps le permet) :
+
 3. #### Temple Run like
         Description :
 4. #### Quizz
@@ -65,5 +69,5 @@ Un ou deux jeux qui fonctionnent correctement sur lesquels 2 utilisateurs peuven
         Description :
 6. #### Memory
         Description :
-7. #### Pictionnary
+7. #### Jeu des sept familles
         Description :
