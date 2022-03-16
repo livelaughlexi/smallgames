@@ -21,3 +21,39 @@ Descriptif du projet :
 
 ### Analyse concurentielle
 
+Pros :
+
+- 
+
+Cons :
+
+- Enormément d'autres concurrents, il faudrait offrir une énorme palette de jeux, afin d'avoir la possibilité d'entrer dans la course concurrentielle.
+
+### Fonctionnalités plannifiés
+
+- Créer un compte
+- Matchmaking
+- Implémentation de jeu
+- Association de score par jeu et par joueur
+    - "All Time" ranking pour 1 run (En fonction des minis-jeux)
+    - "All Time" ranking pour toutes les runs additionnées (En fonction des minis-jeux)
+
+### Meta
+
+Chacun code son mini-jeu avec une cohérence graphique identitique pour tout le site et tous les mini-jeux.
+
+### Concept UI/UX, wireframes
+
+
+### Description du MVP
+
+
+### Mini-Jeux :
+
+1. Jeu des sept familles
+2. Pong
+3. Temple Run like
+4. Quizz
+5. Blindtest
+6. Memory
+7. Pictionnary
