@@ -47,16 +47,23 @@ Chacun code son mini-jeu avec une cohérence graphique identitique pour tout le 
 
 #### Description du MVP
 
-Les mini-jeux, ainsi que leurs scores avec la fonctionnalité de "Duel" sont la base de notre projet et ils sont donc indispensables.
+Un ou deux jeux qui fonctionnent correctement sur lesquels 2 utilisateurs peuvent s'affronter avec une table avec les scores. (Loris)
 
 ---
 
 ### Mini-Jeux :
 
-1. Jeu des sept familles
-2. Pong
-3. Temple Run like
-4. Quizz
-5. Blindtest
-6. Memory
-7. Pictionnary
+1. #### Jeu des sept familles
+        Description :
+2. #### Pong
+        Description :
+3. #### Temple Run like
+        Description :
+4. #### Quizz
+        Description :
+5. #### Blindtest
+        Description :
+6. #### Memory
+        Description :
+7. #### Pictionnary
+        Description :
