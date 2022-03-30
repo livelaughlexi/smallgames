@@ -1,0 +1,30 @@
+<body>
+    {{> mainContainer }}
+</body>
+
+<template name="mainContainer">
+    <div class="app">
+        <header>
+            <div class="app-bar">
+                <div class="app-header">
+                    <h1>Todo List</h1>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            {{> form}}
+             <ul class="tasks">
+                {{#each tasks}}
+                    {{> task}}
+                 {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="form">
+    <form class="task-form">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+        <button type="submit">Add Task</button>
+    </form>
+</template>
