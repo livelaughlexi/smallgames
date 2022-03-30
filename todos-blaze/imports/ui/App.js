@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { TasksCollection } from "../api/TasksCollection";
 import './App.html';
 import './Task.js';
+import '../pictionary/images.js';
 
 Template.mainContainer.helpers({
   tasks() {
