@@ -1,18 +1,12 @@
 import { Meteor } from 'meteor/meteor';
-import { TasksCollection } from '/imports/api/TasksCollection';
+import { imagesCollection } from '../imports/api/imagesCollection';
 
-const insertTask = taskText => TasksCollection.insert({ text: taskText });
+const insertImage = sourceImage => imagesCollection.insert({ txt : sourceImage });
  
 Meteor.startup(() => {
-  if (TasksCollection.find().count() === 0) {
+  if (imagesCollection.find().count() === 0) {
     [
-      'First Task',
-      'Second Task',
-      'Third Task',
-      'Fourth Task',
-      'Fifth Task',
-      'Sixth Task',
-      'Seventh Task'
-    ].forEach(insertTask)
+      '../../images/pictionary/moto.jpg'
+    ].forEach(insertImage)
   }
 });
