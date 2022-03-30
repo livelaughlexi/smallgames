@@ -54,7 +54,12 @@ Un ou deux jeux qui fonctionnent correctement sur lesquels 2 utilisateurs peuven
 ### Mini-Jeux :
 
 1. #### Pictionnary
-        Description :
+        Jeu coop
+        Description : Un joueur a un mot et 9 images proposés devant lui, il doit en choisir 3 qui vont être envoyées à son partenaire dans le but qu'il devine le mot qu'il a devant lui. Il aura la possibilité de "tracer" une seule image dans le but d'aider à deviner le mot, mais cette opération diminue les points gagnés à la fin. (Le joueur a aussi la possibilité de voir les mots que son partenaire va avoir et d'en enlever, toujours contre une diminution de points à la fin.
+
+        Schema :
+        ![schema](Schema small games.jpeg)
+
 2. #### Pong
         Description :
         Ressources : Kaboom JS
