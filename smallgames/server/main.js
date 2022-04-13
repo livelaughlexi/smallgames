@@ -6,6 +6,6 @@ Meteor.startup(() => {
   // code to run on server at startup
   if(SourceImage.find().count() === 0)
   {
-    SourceImage.insert({ source:'moto.jpg', nom:'moto'});
+    SourceImage.insert({ source:'/jeuImages/reponses/moto.jpg', nom:'moto', type:'reponse'});
   }
 });
