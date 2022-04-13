@@ -76,10 +76,3 @@ Un ou deux jeux qui fonctionnent correctement sur lesquels 2 utilisateurs peuven
         Description :
 7. #### Jeu des sept familles
         Description :
-
-
-### Contributeurs
-#### Sébastien Franzone
-#### André Santiago
-#### Lennox Fretz
-#### Marie Fasel
