@@ -1,3 +1,7 @@
 <template name="afficherImage">
-  <img src="{{sourceImage}}">
+
+  {{#each source in sourceImage}}
+    <img src="{{source}}">
+  {{/each}}  
+
 </template>
