@@ -8,9 +8,13 @@ Template.afficherImage.helpers({
     sourceImage(){
         let listeImagesAide = [];
         let nombresRandom = [];
+        const nombreImages = SourceImage.find({type: "aide"}).count();
+        console.log("nombre images c'est: " + nombreImages); 
         for(let i = 0; i < 9; i++)
         {
             let random = Math.floor(Math.random()*10);   //prendre des images aléatoires
+            console.log("here");
+
             if(nombresRandom.includes(random)){
                 i--;
             }
@@ -31,13 +35,9 @@ Template.afficherImage.events({
             target.style.filter = "opacity(50%)";   //séléctionner
             nombreImagesSelectionnees++;
         }
-        else if (target.style.filter == "opacity(50%)" && nombreImagesSelectionnees == 3){
-            target.style.filter = "opacity(100%)";          //désélectionner (si le nombre max d'images est atteint)
-            nombreImagesSelectionnees--;
-        }
-        else{
+        else if(target.style.filter == "opacity(50%)"){
             target.style.filter = "opacity(100%)";  //désélectionner (si le nombre max d'images n'est pas atteint)
-            
+            nombreImagesSelectionnees--;         
         }
     }
 })
