@@ -23,15 +23,21 @@ Template.afficherImage.helpers({
     },
 });
 
+let nombreImagesSelectionnees = 0;  //calculer nombre max d'images sélectionnables (3)
 Template.afficherImage.events({
     "click .aideImage"(event) {
-       const target = event.target;
-        if(target.style.filter == "opacity(100%)")
-        {
+        const target = event.target;
+        if(target.style.filter == "opacity(100%)" && nombreImagesSelectionnees < 3){
             target.style.filter = "opacity(50%)";   //séléctionner
+            nombreImagesSelectionnees++;
+        }
+        else if (target.style.filter == "opacity(50%)" && nombreImagesSelectionnees == 3){
+            target.style.filter = "opacity(100%)";          //désélectionner (si le nombre max d'images est atteint)
+            nombreImagesSelectionnees--;
         }
         else{
-            target.style.filter = "opacity(100%)";  //désélectionner
+            target.style.filter = "opacity(100%)";  //désélectionner (si le nombre max d'images n'est pas atteint)
+            
         }
     }
 })
