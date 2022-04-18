@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { SourceImage } from '../imports/api/sourceImages.js';
+// eslint-disable-next-line no-unused-vars
+import { imagesUtilisees } from '../imports/api/imagesUtilisees.js';
 
 
 Meteor.startup(() => {

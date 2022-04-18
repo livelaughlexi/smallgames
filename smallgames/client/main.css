@@ -3,8 +3,19 @@ body {
   font-family: sans-serif;
 }
 
-img{
+.aideImage{
   height: 200px;
   width: 200px;
   border-radius: 5px;
+  margin: 5px;
+  border: 1px black solid;
+}
+
+.aideImageFlex{
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,7 +1,8 @@
 <template name="afficherImage">
-
-  {{#each source in sourceImage}}
-    <img class="aideImage" src="{{source}}" style="filter:opacity(100%);">
-  {{/each}}  
-
+  <div class="aideImageFlex">
+    {{#each source in sourceImage}}
+      <img class="aideImage" src="{{source}}" style="filter:opacity(100%);" id="{{@index}}">
+    {{/each}}  
+  </div>
+  <button class="confirmer">confirmer</button>
 </template>
