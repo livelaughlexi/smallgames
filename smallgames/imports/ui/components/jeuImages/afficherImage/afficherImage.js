@@ -54,5 +54,6 @@ Template.afficherImage.events({
         // eslint-disable-next-line meteor/no-session
         let mot = Session.get('mot');
         imagesUtilisees.insert({image0: imagesSelectionnes[0], image1: imagesSelectionnes[1], image2: imagesSelectionnes[2], mot: mot});
+        //ajouter redirection vers afficherImage2
     }
 });

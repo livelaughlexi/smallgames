@@ -19,3 +19,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.reponsesMots{
+  border: 1px black solid;
+  background-color: lightblue;
+  border-radius: 2px;
+  width: 100px;
+  text-align: center;
+}
