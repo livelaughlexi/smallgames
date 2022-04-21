@@ -11,20 +11,17 @@ Template.afficherImage.helpers({
     sourceImage(){
         listeImagesAide = []; //pour reset la liste
         let nombresRandom = [];
-        /* const nombreImages = SourceImage.find({type: "aide"}).count();
-        console.log("nombre images c'est: " + nombreImages);  */
+        let nombreImages = SourceImage.find({type: "aide"}).count();
+        console.log("nombre images c'est: " + nombreImages); 
+        nombreImages = 19;          //a changer dès que j'ai compris pourquoi nombreImages retourne parfois 7, parfois la bonne réponse
         for(let i = 0; i < 9; i++)
-        {
-            let random = Math.floor(Math.random()*10);   //prendre des images aléatoires //changer le 2 en l'ensemble des photos (avec .count)
-            /* let random = Math.floor(Math.random()*nombreImages);
-            console.log("here"); */
+        {  
+            let random = Math.floor(Math.random()*nombreImages);
 
             if(nombresRandom.includes(random)){
                 i--;
             }
             else{
-                // eslint-disable-next-line no-undef
-                console.log("here");
                 nombresRandom.push(random);
                 listeImagesAide.push(SourceImage.findOne({type: "aide"}, {skip: random}).source); //prend uniquement les images de type aide
             }
