@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { SourceImage } from '../../../../api/sourceImages.js';
 import { imagesUtilisees } from '../../../../api/imagesUtilisees.js';
 import { Session } from 'meteor/session';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 import './afficherImage.html';
 
@@ -48,9 +49,17 @@ Template.afficherImage.events({
         }
     },
     "click .confirmer"() {
-        // eslint-disable-next-line meteor/no-session
-        let mot = Session.get('mot');
-        imagesUtilisees.insert({image0: imagesSelectionnes[0], image1: imagesSelectionnes[1], image2: imagesSelectionnes[2], mot: mot});
-        //ajouter redirection vers afficherImage2
+        if(nombreImagesSelectionnees === 3)
+        {
+            // eslint-disable-next-line meteor/no-session
+            let mot = Session.get('mot');
+            imagesUtilisees.insert({image0: imagesSelectionnes[0], image1: imagesSelectionnes[1], image2: imagesSelectionnes[2], mot: mot});
+            //ajouter redirection vers afficherImage2
+            FlowRouter.go('/jeuImages2');
+        }
+        else{
+            // eslint-disable-next-line no-undef
+            window.alert("vous n'avez pas séléctionné assez d'images");
+        }
     }
 });
