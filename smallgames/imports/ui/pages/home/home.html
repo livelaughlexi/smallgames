@@ -1,6 +1,9 @@
 <template name="home">
-    <ul>
-        <li><a href="{{urlFor 'home'}}">Acceuil</a></li>
-        <li><a href="{{urlFor 'jeuImages'}}">Jeu des Images</a></li>
-    </ul>
+    {{#if currentUser}}
+        <ul>
+            <li><a href="{{urlFor 'home'}}">Accueil</a></li>
+            <li><a href="{{urlFor 'jeuImages'}}">Jeu des Images</a></li>
+        </ul>
+    {{/if}}
+    {{> loginButtons}}
 </template>
