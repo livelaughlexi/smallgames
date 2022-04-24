@@ -4,6 +4,7 @@ import '../../ui/pages/home/home';
 import '../../ui/pages/jeuImages/jeuImages';
 import '../../ui/pages/jeuImages/jeuImages2';
 import '../../ui/pages/play/play'
+import '../../ui/pages/notFound/notFound'
 
 FlowRouter.route('/', {
     name: 'home',
@@ -32,3 +33,9 @@ FlowRouter.route('/play', {
         this.render('play');
     },
 });
+
+FlowRouter.route('*', {
+    action() {
+      this.render('notFound');
+    }
+  });
