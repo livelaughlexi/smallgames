@@ -1,6 +1,37 @@
+/* BEGIN Importation police */
+@font-face {
+  font-family: 'Gordita';
+  font-weight: 300;
+  src: url(/fonts/GorditaLight.otf) format(otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gordita';
+  font-weight: 300;
+  src: url(/fonts/GorditaLightItalic.otf) format(otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gordita';
+  font-weight: 700;
+  src: url(/fonts/GorditaBold.otf) format(otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gordita';
+  font-weight: 700;
+  src: url(/fonts/GorditaBoldItalic.otf) format(otf);
+  font-display: swap;
+}
+
+/* END Importation police */
+
 body {
   padding: 10px;
-  font-family: sans-serif;
+  font-family: 'Gordita';
 }
 
 .aideImage{
