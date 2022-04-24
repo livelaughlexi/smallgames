@@ -29,8 +29,45 @@
 
 /* END Importation police */
 
+/* BEGIN Style de la navigation */
+
+.globalHeader {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  display: inline-flex;
+}
+.appNameContainer h1 {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.appNameContainer {
+  margin: 0 15px 0 15px;
+}
+
+/* BEGIN Design Homepage */
+.homeMainContent {
+  background-image: url(/globalAssets/globalBackground.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.homeContainer {
+  background: #fff;
+  width: 50%;
+  border-radius: 20px;
+  padding: 20px 25px 20px 25px;
+  text-align: center;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+
 body {
-  padding: 10px;
+  margin:0;
   font-family: 'Gordita';
 }
 
