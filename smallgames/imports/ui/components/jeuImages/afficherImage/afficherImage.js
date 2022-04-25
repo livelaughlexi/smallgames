@@ -14,7 +14,7 @@ Template.afficherImage.helpers({
         let nombresRandom = [];
         let nombreImages = SourceImage.find({type: "aide"}).count();
         console.log("nombre images c'est: " + nombreImages); 
-        nombreImages = 19;          //a changer dès que j'ai compris pourquoi nombreImages retourne parfois 7, parfois la bonne réponse
+        nombreImages = 33;    //a changer dès que j'ai compris pourquoi nombreImages retourne parfois 7, parfois la bonne réponse
         for(let i = 0; i < 9; i++)
         {  
             let random = Math.floor(Math.random()*nombreImages);
@@ -37,12 +37,12 @@ let imagesSelectionnes = [];
 Template.afficherImage.events({
     "click .aideImage"(event) {
         const target = event.target;
-        if(target.style.filter == "opacity(100%)" && nombreImagesSelectionnees < 3){
+        if(target.style.filter === "opacity(100%)" && nombreImagesSelectionnees < 3){
             target.style.filter = "opacity(50%)";   //séléctionner
             nombreImagesSelectionnees++;
             imagesSelectionnes.push(listeImagesAide[target.id]);
         }
-        else if(target.style.filter == "opacity(50%)"){
+        else if(target.style.filter === "opacity(50%)"){
             target.style.filter = "opacity(100%)";  //désélectionner (si le nombre max d'images n'est pas atteint)
             nombreImagesSelectionnees--;
             imagesSelectionnes = imagesSelectionnes.filter(item => item !== listeImagesAide[target.id]);         

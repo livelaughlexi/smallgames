@@ -1,6 +1,7 @@
 import { Template } from "meteor/templating";
 import { SourceImage } from "../../../../api/sourceImages";
 import { imagesUtilisees } from "../../../../api/imagesUtilisees";
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 import "./afficherMot2.html";
 
@@ -42,6 +43,7 @@ Template.afficherMot2.helpers({
 
 let motSelectionne = false;
 let reponseChoisie = 0;
+let vies = 3;
 Template.afficherMot2.events({
     "click .reponsesMots"(event) {
         const target = event.target;
@@ -68,9 +70,19 @@ Template.afficherMot2.events({
         {
             window.alert("Vous avez trouvé la bonne réponse");
             //trouver score à attribuer
+
+            FlowRouter.go('/');
         }
         else{
-            window.alert("Vous etes nul!!!");
+            vies--;
+            if(vies === 0)
+            {
+                window.alert("Vous avez perdu");
+                FlowRouter.go('/');
+            }
+            else{
+                window.alert(`Vous avez encore ${vies} vies`);
+            }
         }
     }
 });
