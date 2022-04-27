@@ -71,14 +71,14 @@ Template.afficherMot2.events({
             window.alert("Vous avez trouvé la bonne réponse");
             //trouver score à attribuer
 
-            FlowRouter.go('/');
+            FlowRouter.go('/play');
         }
         else{
             vies--;
             if(vies === 0)
             {
                 window.alert("Vous avez perdu");
-                FlowRouter.go('/');
+                FlowRouter.go('/play');
             }
             else{
                 window.alert(`Vous avez encore ${vies} vies`);
@@ -86,3 +86,4 @@ Template.afficherMot2.events({
         }
     }
 });
+
