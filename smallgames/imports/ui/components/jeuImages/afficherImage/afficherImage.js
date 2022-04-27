@@ -14,7 +14,7 @@ Template.afficherImage.helpers({
         let nombresRandom = [];
         let nombreImages = SourceImage.find({type: "aide"}).count();
         console.log("nombre images c'est: " + nombreImages); 
-        nombreImages = 33;    //a changer dès que j'ai compris pourquoi nombreImages retourne parfois 7, parfois la bonne réponse
+        nombreImages = 50;    //a changer dès que j'ai compris pourquoi nombreImages retourne parfois 7, parfois la bonne réponse
         for(let i = 0; i < 9; i++)
         {  
             let random = Math.floor(Math.random()*nombreImages);
