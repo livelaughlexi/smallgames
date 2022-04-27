@@ -2,21 +2,21 @@
 @font-face {
   font-family: 'Gordita';
   font-weight: 300;
-  src: url(/fonts/GorditaLight.otf) format(otf);
+  src: url('/fonts/GorditaLight.otf') format('otf');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Gordita';
   font-weight: 300;
-  src: url(/fonts/GorditaLightItalic.otf) format(otf);
+  src: url('/fonts/GorditaLightItalic.otf') format('otf');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Gordita';
   font-weight: 700;
-  src: url(/fonts/GorditaBold.otf) format(otf);
+  src: url('/fonts/GorditaBold.otf') format('otf');
   font-display: swap;
 }
 
