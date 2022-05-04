@@ -16,7 +16,7 @@ FlowRouter.route('/', {
     },
 });
 
-FlowRouter.route('/jeuImages', {
+FlowRouter.route('/jeuImages/:_id', {
     name: 'jeuImages',
     action() {
         this.render('jeuImages');
@@ -43,7 +43,7 @@ FlowRouter.route('/leaderboard', {
         this.render('leaderboard');
     }
 })
-FlowRouter.route('/jeuImages2', {
+FlowRouter.route('/jeuImages2/:_id', {
     name: 'jeuImages2',
     action() {
         this.render('jeuImages2');
