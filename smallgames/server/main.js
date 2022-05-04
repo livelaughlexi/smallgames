@@ -21,3 +21,9 @@ Meteor.startup(() => {
         SourceImage.insert({source:'/jeuImages/reponses/hockey.jpg', nom:'hockey' , type:'reponse'});
   }
 });
+
+/*
+Meteor.users.deny({
+  update() { return true; }
+});
+*/
