@@ -4,6 +4,7 @@ import '../../ui/pages/home/home';
 import '../../ui/pages/jeuImages/jeuImages';
 import '../../ui/pages/register/register';
 import '../../ui/pages/login/login';
+import '../../ui/pages/leaderboard/leaderboard';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -31,4 +32,11 @@ FlowRouter.route('/login', {
     action() {
         this.render('login');
     },
+});
+
+FlowRouter.route('/leaderboard', {
+    name: 'leaderboard',
+    action() {
+        this.render('leaderboard');
+    }
 })

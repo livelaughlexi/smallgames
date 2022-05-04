@@ -9,3 +9,9 @@ Meteor.startup(() => {
     SourceImage.insert({ source:'/jeuImages/reponses/moto.jpg', nom:'moto', type:'reponse'});
   }
 });
+
+/*
+Meteor.users.deny({
+  update() { return true; }
+});
+*/

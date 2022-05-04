@@ -8,6 +8,8 @@ Template.loginForm.events({
         event.preventDefault();
         let email = $('[name=email]').val();
         let password = $('[name=password]').val();
-        Meteor.loginWithPassword(email, password);
+        Meteor.loginWithPassword(email, password, function(error){
+            console.log(error.reason);
+        });
     }
 });

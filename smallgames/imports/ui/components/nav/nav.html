@@ -1,7 +1,8 @@
 <template name="nav">
     <ul>
-        <li><a href="{{urlFor 'home'}}">Acceuil</a></li>
+        <li><a href="{{urlFor 'home'}}">Accueil</a></li>
         <li><a href="{{urlFor 'jeuImages'}}">Jeu des Images</a></li>
+        <li><a href="{{urlFor 'leaderboard'}}">Classement</a></li>
         {{#if currentUser}}
             <li><a href="#" class="logout">Logout</a></li>
         {{else}}
