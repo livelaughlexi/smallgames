@@ -1,0 +1,2 @@
+import './nouvPartie.html';
+

@@ -3,8 +3,10 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import '../../ui/pages/home/home';
 import '../../ui/pages/jeuImages/jeuImages';
 import '../../ui/pages/jeuImages/jeuImages2';
-import '../../ui/pages/play/play'
-import '../../ui/pages/notFound/notFound'
+import '../../ui/pages/play/play';
+import '../../ui/pages/notFound/notFound';
+import '../../ui/pages/pong/pong';
+import '../../ui/pages/pong/newGame';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -39,3 +41,17 @@ FlowRouter.route('*', {
       this.render('notFound');
     }
   });
+
+  FlowRouter.route('/pong', {
+    name: 'pong',
+    action() {
+        this.render('pong');
+    },
+});
+
+FlowRouter.route('/newGame', {
+    name: 'newGame',
+    action() {
+        this.render('newGame');
+    },
+});

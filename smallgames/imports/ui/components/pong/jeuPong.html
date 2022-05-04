@@ -1,5 +1,15 @@
 <template name="jeuPong">
-    <div class="jeuP">
-        
-    </div>
+        <a class="jeuP" href="{{urlFor 'newGame'}}">
+            <div class="game pong">
+                <!-- <img src="/images/pong.jpg" alt=""> -->
+                <h2>Nouvelle partie</h2>
+            </div>
+        </a>
+        <br>
+        <a class="returnP" href="{{urlFor 'play'}}">
+            <div class="game pong">
+                <!-- <img src="/images/pong.jpg" alt=""> -->
+                <h2>Back</h2>
+            </div>
+        </a>
 </template>
