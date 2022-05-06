@@ -11,7 +11,7 @@ Meteor.methods({
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), idJ2: "", image0: "", image1: "", image2: "", mot: ""});
+        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: ""});
     },
     'insererImagesChoisies'(imgSel0, imgSel1, imgSel2, motSel){
         check(imgSel0, String);
@@ -21,9 +21,11 @@ Meteor.methods({
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.update({idJ1: Meteor.userId()}, {$set:{image0: imgSel0, image1: imgSel1, image2: imgSel2, mot: motSel}});
-        //Que pour le prototype, à enlever dès que JeuImages1 et 2 ne sont plus dépendants
-        imagesUtilisees.update({idJ1: Meteor.userId()}, {$set:{idJ2: Meteor.userId()}}); 
+        imagesUtilisees.update({idJ1: Meteor.userId()}, {$set:{J1termine: true, image0: imgSel0, image1: imgSel1, image2: imgSel2, mot: motSel}});
+    },
+    'ajouterJoueur2'(id){
+        check(id, String);
+        imagesUtilisees.update({_id: id}, {$set:{idJ2: Meteor.userId()}});
     },
     'removeBase'(id){
         check(id, String);

@@ -57,9 +57,8 @@ Template.afficherImage.events({
             // eslint-disable-next-line meteor/no-session
             let mot = Session.get('mot');
             Meteor.call('insererImagesChoisies', imagesSelectionnes[0], imagesSelectionnes[1], imagesSelectionnes[2], mot);
-            let id = FlowRouter.getParam('_id');
-            //ajouter redirection vers afficherImage2
-            FlowRouter.go(`/jeuImages2/${id}`);
+            //ajouter redirection vers play
+            FlowRouter.go('/play');
         }
         else{
             // eslint-disable-next-line no-undef
