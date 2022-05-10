@@ -14,10 +14,10 @@ Template.afficherImage.onCreated(function (){
 let listeImagesAide = []
 Template.afficherImage.helpers({
     sourceImage(){
-        listeImagesAide = []
+        /* listeImagesAide = []
         let nombresRandom = []
-        let nombreImages = SourceImage.find({type: "aide"}).count();
-        if (nombreImages >= 9) {
+        let nombreImages = SourceImage.find({type: "aide"}).count(); */
+        /* if (nombreImages >= 9) {
             for(let i = 0; i < 9; i++)
             {  
                 let random = Math.floor(Math.random()*nombreImages);
@@ -30,8 +30,45 @@ Template.afficherImage.helpers({
                     listeImagesAide.push(SourceImage.findOne({type: "aide"}, {skip: random}).source); //prend uniquement les images de type aide
                 }
             }
+        } */
+        listeImagesAide = []
+        let listeRandomId = []
+        let nombreImages = SourceImage.find({type: "aide"}).count();
+        if (nombreImages >= 9) {
+            let mot = Session.get('mot');
+            let imageReponseRandom = Math.ceil(Math.random()*3);
+            let nomImageReponse = "";
+            if(imageReponseRandom == 1)
+            {
+                nomImageReponse = SourceImage.findOne({nom: mot})?.image1; 
+            }
+            else if(imageReponseRandom == 2)
+            {
+                nomImageReponse = SourceImage.findOne({nom: mot})?.image2; 
+            }
+            else if(imageReponseRandom == 3)
+            {
+                nomImageReponse = SourceImage.findOne({nom: mot})?.image3; 
+            }
+            listeImagesAide.push(SourceImage.findOne({nom: nomImageReponse})?.source);
+            listeRandomId.push(SourceImage.findOne({nom: nomImageReponse})?._id);
+            for(let i = 0; i < 8; i++)
+            {  
+                let random = Math.floor(Math.random()*nombreImages);
+                let randomId = SourceImage.findOne({type: "aide"}, {skip: random})._id;
+    
+                if(listeRandomId?.includes(randomId)){
+                    i--;
+                }
+                else{
+                    listeRandomId.push(randomId);
+                    listeImagesAide.push(SourceImage.findOne({_id: randomId}).source); //prend uniquement les images de type aide
+                }
+            }
         }
-       return listeImagesAide;
+        //shuffle la liste:
+        shuffle(listeImagesAide);
+        return listeImagesAide;
     },
 });
 
@@ -66,3 +103,22 @@ Template.afficherImage.events({
         }
     }
 });
+
+
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
