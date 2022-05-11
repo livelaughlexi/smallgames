@@ -22,8 +22,32 @@ Meteor.startup(() => {
   }
 });
 
-/*
-Meteor.users.deny({
-  update() { return true; }
+function randomUsername(){
+  let randomUsername = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  for (let i = 0; i < 6; i++){
+    randomUsername += characters.charAt(Math.ceil(Math.random()*characters.length + 1))
+  }
+  return randomUsername
+}
+function randomScore(){
+  let result = Math.ceil(Math.random()*500);
+  return result;
+}
+
+Meteor.methods({
+  'addPlayer': function(){
+      Meteor.users.insert({
+          username: randomUsername(),
+          profile: {
+            score: randomScore()
+            },
+          },
+    )},
+  
+  'givePointsToCurrentAccount': function(){
+      let currentUser = Meteor.userId();
+      Meteor.users.update({ _id: currentUser}, { $inc: { 'profile.score': 12}})
+  },
+
 });
-*/
