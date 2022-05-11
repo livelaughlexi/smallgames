@@ -26,3 +26,7 @@ Meteor.publish('partiesLancees', function(){
     //return imagesUtilisees.find({},{fields: {_id: 1, idJ1: 1, idJ2: 1, J1termine: 1}});
     return imagesUtilisees.find({});
 });
+
+Meteor.publish('sourceImages', function(){
+    return SourceImage.find({});                    //pour le développement
+})
