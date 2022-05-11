@@ -9,30 +9,18 @@ import './afficherImage.html';
 Template.afficherImage.onCreated(function (){
     this.subscribe('sourceJeuImages');
     this.subscribe('imagesUtiliseesDB');        //A enlever sur le final, sert juste à voir si les donnees sont bien rentrées
+
+    this.subscribe('sourceImage');
+    let base = SourceImage.find({}).fetch();
+    console.log(base);
+    //console.log(JSON.stringify(SourceImage.find({}).collection));
 });
 
 let listeImagesAide = []
 Template.afficherImage.helpers({
     sourceImage(){
-        /* listeImagesAide = []
-        let nombresRandom = []
-        let nombreImages = SourceImage.find({type: "aide"}).count(); */
-        /* if (nombreImages >= 9) {
-            for(let i = 0; i < 9; i++)
-            {  
-                let random = Math.floor(Math.random()*nombreImages);
-    
-                if(nombresRandom?.includes(random)){
-                    i--;
-                }
-                else{
-                    nombresRandom.push(random);
-                    listeImagesAide.push(SourceImage.findOne({type: "aide"}, {skip: random}).source); //prend uniquement les images de type aide
-                }
-            }
-        } */
-        listeImagesAide = []
-        let listeRandomId = []
+        listeImagesAide = [];
+        let listeRandomId = [];
         let nombreImages = SourceImage.find({type: "aide"}).count();
         if (nombreImages >= 9) {
             let mot = Session.get('mot');
