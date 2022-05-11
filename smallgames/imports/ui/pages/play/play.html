@@ -1,7 +1,7 @@
 <template name="play">
     {{> globalHeader}}
     <div class="mainContainer">
-        <h1>À quoi veux-tu jouer aujourd'hui?</h1>
+        <h1>Bonjour{{#if currentUser}} {{currentUser.username}}{{/if}}, à quoi veux-tu jouer aujourd'hui?</h1>
         <div class="games">
             {{> commencerJeuImages}}
             <a class="noStyle" href="{{urlFor 'pong'}}">
