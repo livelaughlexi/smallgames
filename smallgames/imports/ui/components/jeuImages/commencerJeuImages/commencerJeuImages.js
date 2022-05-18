@@ -11,7 +11,7 @@ import { SourceImage } from '../../../../db/sourceImages';
 Template.commencerJeuImages.onCreated(function(){
     this.subscribe('partiesLancees');
     this.subscribe('sourceJeuImages');
-    this.subscribe('motsJeuImages');
+    this.subscribe('motsJeuImages'); 
 });
 
 Template.commencerJeuImages.events({

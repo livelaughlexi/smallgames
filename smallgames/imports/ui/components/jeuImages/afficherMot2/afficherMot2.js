@@ -25,10 +25,10 @@ let vies = 3;
 Template.afficherMot2.events({
     "click .reponsesMots"(event) {
         const target = event.target;
-        if(target.style.filter === "opacity(100%)" && !motSelectionne){
+        if(target.style.filter === "opacity(100%)" && !motSelectionne && target.style.backgroundColor != "red"){
             target.style.filter = "opacity(50%)";   //séléctionner
             motSelectionne = true;
-            reponseChoisie = (listeMots[target.id]);
+            reponseChoisie = target.id;
         }
         else if(target.style.filter === "opacity(50%)"){
             target.style.filter = "opacity(100%)";  //désélectionner (si le nombre max d'images n'est pas atteint)
@@ -60,7 +60,12 @@ Template.afficherMot2.events({
             FlowRouter.go('/play');
         }
         else{
+            // ne pas reprendre le meme mot
+            let mot = document.getElementById(reponseChoisie);
+            mot.style.filter = "opacity(100%)";
+            mot.style.backgroundColor = "red";
             vies--;
+            motSelectionne = false;
             if(vies === 0)
             {
                 // eslint-disable-next-line no-undef
