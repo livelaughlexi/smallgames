@@ -27,13 +27,6 @@ Meteor.methods({
         check(id, String);
         imagesUtilisees.update({_id: id}, {$set:{idJ2: Meteor.userId()}});
     },
-    'removeBase'(id){
-        check(id, String);
-        if (!this.userId){
-            throw new Meteor.Error('Not authorized.');
-        }
-        imagesUtilisees.remove({_id: id});
-    },
     'ajouterListeImages'(listeImages, id){
         check(listeImages, Array);
         check(id, String);

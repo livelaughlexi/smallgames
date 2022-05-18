@@ -1,15 +1,29 @@
 import { Meteor } from 'meteor/meteor';
 import { SourceImage } from '../imports/db/sourceImages.js';
-// eslint-disable-next-line no-unused-vars
 import { imagesUtilisees } from '../imports/db/imagesUtilisees.js';
 import '../imports/api/jeuImagesPublications';
+import { check } from 'meteor/check';
 
 
 Meteor.startup(() => {
   // code to run on server at startup
   if (SourceImage.find().count() === 0) {
-
         baseSourceImage.forEach(x => SourceImage.insert(x));
+  }
+});
+
+Meteor.methods({
+  'ajouterScoreImagesJeu'(idPartie, score){
+    check(idPartie, String);
+    check(score, Number);
+    let joueur1 = imagesUtilisees.findOne({_id: idPartie}).idJ1;
+    let joueur2 = imagesUtilisees.findOne({_id: idPartie}).idJ2;
+    Meteor.users.update({_id: joueur1}, {$inc: {'profile.score': score}});
+    Meteor.users.update({_id: joueur2}, {$inc: {'profile.score': score}});
+    if (!this.userId){
+      throw new Meteor.Error('Not authorized.');
+    }
+    imagesUtilisees.remove({_id: idPartie});
   }
 });
 

@@ -6,7 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import "./afficherMot2.html";
 
 Template.afficherMot2.onCreated(function(){
-    this.subscribe('imagesUtilisees');
+    this.subscribe('imagesUtiliseesDB');
     this.subscribe('motsJeuImages');
 });
 
@@ -50,10 +50,13 @@ Template.afficherMot2.events({
         {
             // eslint-disable-next-line no-undef
             window.alert("Vous avez trouvé la bonne réponse");
-            //trouver score à attribuer
+            
             let idPage = FlowRouter.getParam('_id'); 
-            Meteor.call('removeBase', idPage);
+            //trouver score à attribuer
+            let points = vies*30+10;
+            Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
 
+            motSelectionne = false;
             FlowRouter.go('/play');
         }
         else{
@@ -62,6 +65,14 @@ Template.afficherMot2.events({
             {
                 // eslint-disable-next-line no-undef
                 window.alert("Vous avez perdu");
+                
+                //trouver score à attribuer
+
+                let idPage = FlowRouter.getParam('_id');
+                let points = 10;
+                Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
+                reponseChoisie = 0;
+                motSelectionne = false;
                 FlowRouter.go('/play');
             }
             else{
