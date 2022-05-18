@@ -42,7 +42,9 @@ Template.afficherImage.events({
     "click .confirmer"() {
         if(nombreImagesSelectionnees === 3)
         {
-            Meteor.call('insererImagesChoisies', imagesSelectionnes[0], imagesSelectionnes[1], imagesSelectionnes[2]);
+            let idPage = FlowRouter.getParam('_id');
+            Meteor.call('insererImagesChoisies', imagesSelectionnes[0], imagesSelectionnes[1], imagesSelectionnes[2], idPage);
+            nombreImagesSelectionnees = 0;
             //ajouter redirection vers play
             FlowRouter.go('/play');
         }

@@ -8,14 +8,6 @@ import { imagesUtilisees } from '../../../../db/imagesUtilisees';
 import { SourceImage } from '../../../../db/sourceImages';
 
 
-/* Template.commencerJeuImages.events({
-    "click .game"(){
-        let id = Random.id();
-        Meteor.call('creerImagesUtilisees', id);
-        FlowRouter.go(`/jeuImages/${id}`);
-    }
-});  */
-
 Template.commencerJeuImages.onCreated(function(){
     this.subscribe('partiesLancees');
     this.subscribe('sourceJeuImages');
@@ -53,7 +45,7 @@ Template.commencerJeuImages.events({
 
             let random = Math.floor(Math.random() * nombreMots);    
             let mot = SourceImage.findOne({type: "reponse"}, {skip: random})?.nom;
-            Meteor.call('ajouterMot', mot);
+            Meteor.call('ajouterMot', mot, id);
 
             let listeImagesAide = [];
             let listeRandomId = [];
@@ -91,7 +83,7 @@ Template.commencerJeuImages.events({
             }
             //shuffle la liste:
             shuffle(listeImagesAide);  
-            Meteor.call('ajouterListeImages', listeImagesAide);
+            Meteor.call('ajouterListeImages', listeImagesAide, id);
 
             let listeMots = []; //pour reset la liste
             let nombresRandom = [];
@@ -117,7 +109,7 @@ Template.commencerJeuImages.events({
                 let placeAleatoire = Math.floor(Math.random()*9);
                 listeMots.splice(placeAleatoire, 0, mot);
             }
-            Meteor.call('ajouterListeMots', listeMots);
+            Meteor.call('ajouterListeMots', listeMots, id);
         
         
             FlowRouter.go(`/jeuImages/${id}`);

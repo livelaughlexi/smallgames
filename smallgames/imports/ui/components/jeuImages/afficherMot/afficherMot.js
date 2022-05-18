@@ -1,5 +1,5 @@
 import { Template } from "meteor/templating";
-import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 import "./afficherMot.html";
 import { imagesUtilisees } from "../../../../db/imagesUtilisees";
@@ -10,7 +10,8 @@ Template.afficherImage.onCreated(function (){
 
 Template.afficherMot.helpers({
     mot(){
-        let mot = imagesUtilisees.findOne({idJ1: Meteor.userId()})?.mot;
+        let idPage = FlowRouter.getParam('_id');
+        let mot = imagesUtilisees.findOne({_id: idPage})?.mot;
         return mot;
     },
 });
