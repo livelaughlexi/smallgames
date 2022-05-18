@@ -1,8 +1,8 @@
 import { Template } from "meteor/templating";
-import { SourceImage } from "../../../../db/sourceImages";
-import { Session } from 'meteor/session';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 import "./afficherMot.html";
+import { imagesUtilisees } from "../../../../db/imagesUtilisees";
 
 Template.afficherImage.onCreated(function (){
     this.subscribe('motsJeuImages');
@@ -10,12 +10,8 @@ Template.afficherImage.onCreated(function (){
 
 Template.afficherMot.helpers({
     mot(){
-        let nombreMots = SourceImage.find({type: "reponse"}).count();
-
-        let random = Math.floor(Math.random() * nombreMots);    
-        let mot = SourceImage.findOne({type: "reponse"}, {skip: random})?.nom;
-        // eslint-disable-next-line meteor/no-session
-        Session.set('mot', mot);
+        let idPage = FlowRouter.getParam('_id');
+        let mot = imagesUtilisees.findOne({_id: idPage})?.mot;
         return mot;
     },
 });
