@@ -9,12 +9,20 @@ import '../../ui/pages/jeuImages/jeuImages2';
 import '../../ui/pages/play/play'
 import '../../ui/pages/notFound/notFound'
 
+
+
 FlowRouter.route('/', {
     name: 'home',
     action() {
         this.render('home');
     },
 });
+
+FlowRouter.route('*', {
+    action() {
+      this.render('notFound');
+    }
+  });
 
 FlowRouter.route('/jeuImages/:_id', {
     name: 'jeuImages',
@@ -23,17 +31,17 @@ FlowRouter.route('/jeuImages/:_id', {
     },
 });
 
-FlowRouter.route('/register', {
-    name: 'register',
-    action() {
-        this.render('register');
-    },
-});
-
 FlowRouter.route('/login', {
     name: 'login',
     action() {
         this.render('login');
+    },
+});
+
+FlowRouter.route('/register', {
+    name: 'register',
+    action() {
+        this.render('register');
     },
 });
 
@@ -57,9 +65,5 @@ FlowRouter.route('/play', {
     },
 });
 
-FlowRouter.route('*', {
-    action() {
-      this.render('notFound');
-    }
-  });
+
 

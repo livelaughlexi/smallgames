@@ -1,12 +1,15 @@
 <template name="login">
     <div class="homeMainContent">
         <div class="homeContainer">
-            {{#if currentUser}}
-             <p>Tu es déjà connecté, en cours de redirection…</p>
+            {{#if loggingIn}}
+                <p>En cours de chargement...</p>
+            {{else}}
+                {{#if currentUser}}
+                    <p>Tu es connecté, en cours de redirection…</p>
                 {{else}}
-                {{> loginForm}}
-            
-             {{/if}}
+                    {{> loginForm}}
+                {{/if}}
+            {{/if}}
             
         </div>
      </div>

@@ -1,9 +1,15 @@
 <template name="register">
     <div class="homeMainContent">
         <div class="homeContainer">
-            {{#unless currentUser}}
+            {{#if loggingIn}}
+            <p>En cours de chargement...</p>
+        {{else}}
+            {{#if currentUser}}
+                <p>Tu es connecté, en cours de redirection…</p>
+            {{else}}
                 {{> registerForm}}
-             {{/unless}}
+            {{/if}}
+        {{/if}}
         </div>
     </div>
 </template>
