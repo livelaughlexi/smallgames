@@ -5,12 +5,12 @@ import { Meteor } from 'meteor/meteor';
 import './registerForm.html';
 
 Template.registerForm.events({
-    'submit form': function(event){
+    'submit form': function(event, templateInstance){
         event.preventDefault();
-        let email = $('[name=email]').val();
-        let username = $('[name=username]').val();
-        let password = $('[name=password]').val();
-        //let score = 0;
+        let email = templateInstance.find('[name=email]').value;
+        let username = templateInstance.find('[name=username]').value;
+        let password = templateInstance.find('[name=password]').value;
+        
         Accounts.createUser({
             email: email,
             password: password,
@@ -18,35 +18,12 @@ Template.registerForm.events({
             profile: {
                 score: 0
             }
-            //score: score
-        }, function(error){
+            
+        },
+        Meteor.call('sendVerificationLink'),
+        function(error){
             console.log(error.reason);
         });
-        /*
-        Accounts.onCreateUser((options, user) => {
-            const customizedUser = Object.assign({
-                score: 0
-            }, user);
-            if (options.profile) {
-                customizedUser.profile = options.profile;
-            }
-            return customizedUser;
-        })*/
     }
 });
 
-if(Meteor.isServer){
-    Meteor.publish('userData', function() {
-        if (this.userId) {
-            return Meteor.users.find({_id: this.userId }, {
-                fields: { score: 1 }
-            });
-        } else {
-            this.ready();
-        }
-    });
-}
-
-if(Meteor.isClient){
-    Meteor.subscribe('userData');
-}

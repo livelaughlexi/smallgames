@@ -17,3 +17,9 @@ Template.userInfo.helpers({
         return currentUserScore;
     }
 })
+//envoi d'un mail de vérification
+Template.userInfo.events({
+    'click .sendEmailVerificationLink': function(){
+        Meteor.call('sendVerificationLink');
+    }
+})
