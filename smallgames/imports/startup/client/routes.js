@@ -6,8 +6,10 @@ import '../../ui/pages/register/register';
 import '../../ui/pages/login/login';
 import '../../ui/pages/leaderboard/leaderboard';
 import '../../ui/pages/jeuImages/jeuImages2';
-import '../../ui/pages/play/play'
-import '../../ui/pages/notFound/notFound'
+import '../../ui/pages/play/play';
+import '../../ui/pages/notFound/notFound';
+import '../../ui/pages/pong/pong';
+import '../../ui/pages/pong/newGame';
 
 
 
@@ -67,3 +69,16 @@ FlowRouter.route('/play', {
 
 
 
+  FlowRouter.route('/pong', {
+    name: 'pong',
+    action() {
+        this.render('pong');
+    },
+});
+
+FlowRouter.route('/newGame', {
+    name: 'newGame',
+    action() {
+        this.render('newGame');
+    },
+});
