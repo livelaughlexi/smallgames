@@ -1,9 +1,13 @@
 <template name="login">
     <div class="homeMainContent">
         <div class="homeContainer">
-            {{#unless currentUser}}
+            {{#if currentUser}}
+             <p>Tu es déjà connecté, en cours de redirection…</p>
+                {{else}}
                 {{> loginForm}}
-             {{/unless}}
+            
+             {{/if}}
+            
         </div>
      </div>
 </template>
