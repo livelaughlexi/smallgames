@@ -116,10 +116,24 @@ scene("game", ({levelIndex, score, lives}) => {
   // player's paddle
 const paddle = get("paddle")[0];
   // keyboard controls
+/*   onKeyDown("a", () => {
+  if (paddle.x > 0 && paddle.x < width() && paddle.y > 0 && paddle.y < height()) {
+    if (paddle.x < paddle.worldArea().p1.x) { // left
+        paddle.move(-paddle.speed, 0);
+    }
+}
+}); */
+
 onKeyDown("a", () => {
     paddle.move(-paddle.speed, 0);
 })
 onKeyDown("d", () => {
+    paddle.move(paddle.speed, 0);
+})
+onKeyDown("left", () => {
+    paddle.move(-paddle.speed, 0);
+})
+onKeyDown("right", () => {
     paddle.move(paddle.speed, 0);
 })
 
@@ -713,5 +727,3 @@ const LEVELS = [
 ]; */
 
 });
-
-
