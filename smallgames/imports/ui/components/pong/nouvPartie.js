@@ -1,11 +1,16 @@
 import './nouvPartie.html';
 import { Template } from 'meteor/templating'
-import { Flowrouter } from 'meteor/ostrio:flow-router-extra';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 import kaboom from "kaboom/dist/kaboom.mjs";
 
 
-
+Template.nouvPartie.events({
+    "click .game"(){
+        FlowRouter.go("/pong")
+        location.reload();
+     }
+ })
 
 Template.nouvPartie.onRendered(function () {
     
@@ -100,8 +105,8 @@ const LEVELOPT = {
         origin("center"),
         "ball",
         {
-            hspeed: 300,
-            vspeed: 150
+            hspeed: 100,
+            vspeed: 50
         }
     ]
 }
@@ -140,6 +145,8 @@ onUpdate("ball", (ball) => {
     else {
       ball.pos.x = width()/2;
       ball.pos.y = height()/2;
+      ball.hspeed = 100;
+      ball.vspeed = 50;
     }
   }
   
@@ -153,6 +160,8 @@ onCollide("ball", "bouncy", (ball, bouncy) => {
 
     if (bouncy.is("paddle")) { // play sound
         play("paddlehit");
+        ball.vspeed -=20;
+        ball.hspeed -=20;
     }
 });
 
@@ -708,8 +717,3 @@ const LEVELS = [
 });
 
 
-// Template.nouvPartie.events({
-//    "click .game"(){
-//        Flowrouter.go("/pong")
-//    }
-//})
