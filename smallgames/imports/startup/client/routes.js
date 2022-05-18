@@ -69,7 +69,7 @@ FlowRouter.route('/play', {
 
 
 
-  FlowRouter.route('/pong', {
+FlowRouter.route('/pong', {
     name: 'pong',
     action() {
         this.render('pong');

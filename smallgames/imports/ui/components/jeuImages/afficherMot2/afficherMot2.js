@@ -2,6 +2,7 @@ import { Template } from "meteor/templating";
 import { imagesUtilisees } from "../../../../db/imagesUtilisees";
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Meteor } from 'meteor/meteor';
+import Swal from 'sweetalert2';
 
 import "./afficherMot2.html";
 
@@ -44,12 +45,12 @@ Template.afficherMot2.events({
         if(reponseChoisie === 0)
         {
             // eslint-disable-next-line no-undef
-            window.alert("Vous n'avez pas choisi de mot");
+            Swal.fire("Vous n'avez pas choisi de mot");
         }
         else if (reponseChoisie === motADeviner)
         {
             // eslint-disable-next-line no-undef
-            window.alert("Vous avez trouvé la bonne réponse");
+            Swal.fire("Vous avez trouvé la bonne réponse");
             
             let idPage = FlowRouter.getParam('_id'); 
             //trouver score à attribuer
@@ -69,7 +70,7 @@ Template.afficherMot2.events({
             if(vies === 0)
             {
                 // eslint-disable-next-line no-undef
-                window.alert("Vous avez perdu");
+                Swal.fire("Vous avez perdu");
                 
                 //trouver score à attribuer
 
@@ -82,7 +83,8 @@ Template.afficherMot2.events({
             }
             else{
                 // eslint-disable-next-line no-undef
-                window.alert(`Vous avez encore ${vies} vies`);
+                //window.alert(`Vous avez encore ${vies} vies`);
+                Swal.fire(`Vous avez encore ${vies} vies`);
             }
         }
     }
