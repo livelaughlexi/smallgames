@@ -11,17 +11,17 @@ Meteor.methods({
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: ""});
+        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: "", listeImages: null, listeMots: null});
     },
-    'insererImagesChoisies'(imgSel0, imgSel1, imgSel2, motSel){
+    'insererImagesChoisies'(imgSel0, imgSel1, imgSel2, id){
         check(imgSel0, String);
         check(imgSel1, String);
         check(imgSel2, String);
-        check(motSel, String);
+        check(id, String);
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.update({idJ1: Meteor.userId()}, {$set:{J1termine: true, image0: imgSel0, image1: imgSel1, image2: imgSel2, mot: motSel}});
+        imagesUtilisees.update({_id: id}, {$set:{J1termine: true, image0: imgSel0, image1: imgSel1, image2: imgSel2}});
     },
     'ajouterJoueur2'(id){
         check(id, String);
@@ -34,5 +34,29 @@ Meteor.methods({
         }
         imagesUtilisees.remove({_id: id});
     },
+    'ajouterListeImages'(listeImages, id){
+        check(listeImages, Array);
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id}, {$set:{listeImages: listeImages}});
+    },
+    'ajouterMot'(mot, id){
+        check(mot, String);
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id}, {$set:{mot: mot}});
+    },
+    'ajouterListeMots'(listeMots, id){
+        check(listeMots, Array);
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id}, {$set:{listeMots: listeMots}});
+    }
 });
-
+ 

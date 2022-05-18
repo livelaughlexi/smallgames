@@ -1,5 +1,4 @@
 import { Template } from "meteor/templating";
-import { SourceImage } from "../../../../db/sourceImages";
 import { imagesUtilisees } from "../../../../db/imagesUtilisees";
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Meteor } from 'meteor/meteor';
@@ -14,33 +13,8 @@ Template.afficherMot2.onCreated(function(){
 let listeMots = [];
 Template.afficherMot2.helpers({
     listeMots(){
-        listeMots = []; //pour reset la liste
-        let nombresRandom = [];
-        let motADeviner = imagesUtilisees.findOne({})?.mot; //Dépend déjà de l'id du joueur
-        let  nombreMots = SourceImage.find({type: "reponse"})?.count();
-        if(nombreMots >= 8) {
-            for(let i = 0; i < 8; i++)
-            {
-                let random = Math.floor(Math.random()*nombreMots);
-                let motAleatoire = SourceImage.findOne({type: "reponse"}, {skip: random}).nom;
-    
-                if(nombresRandom.includes(random)){
-                    i--;
-                }
-                else if(motAleatoire === motADeviner)
-                {
-                    i--;
-                }
-                else{
-                        nombresRandom.push(random);
-                        listeMots.push(SourceImage.findOne({type: "reponse"}, {skip: random}).nom); //prend uniquement les mots de type reponse
-                }
-            }
-            //ajouter MotADeviner dans la liste dans une place aléatoire
-            let placeAleatoire = Math.floor(Math.random()*9);
-            listeMots.splice(placeAleatoire, 0, motADeviner);
-        }
-        
+        let idPage = FlowRouter.getParam('_id');
+        listeMots = imagesUtilisees.findOne({_id: idPage})?.listeMots;
         return listeMots;
     }
 });
@@ -63,7 +37,8 @@ Template.afficherMot2.events({
         }
     },
     "click .confirmer"() {
-        let motADeviner = imagesUtilisees.findOne({}).mot; //A changer avec l'id des joueurs plus tard
+        let idPage = FlowRouter.getParam('_id');
+        let motADeviner = imagesUtilisees.findOne({_id: idPage})?.mot; //A changer avec l'id des joueurs plus tard
 
         //changer les window.alert
         if(reponseChoisie === 0)
