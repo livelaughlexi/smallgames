@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@fortawesome/fontawesome-free": "^6.1.1",
+    "esbuild": "^0.14.38",
     "jquery": "^3.6.0",
     "kaboom": "^2000.2.9",
     "meteor-node-stubs": "^1.1.0"
