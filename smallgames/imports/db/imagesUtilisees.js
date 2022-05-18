@@ -27,12 +27,29 @@ Meteor.methods({
         check(id, String);
         imagesUtilisees.update({_id: id}, {$set:{idJ2: Meteor.userId()}});
     },
-    'removeBase'(id){
+    'ajouterListeImages'(listeImages, id){
+        check(listeImages, Array);
         check(id, String);
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.remove({_id: id});
+        imagesUtilisees.update({_id: id}, {$set:{listeImages: listeImages}});
     },
+    'ajouterMot'(mot, id){
+        check(mot, String);
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id}, {$set:{mot: mot}});
+    },
+    'ajouterListeMots'(listeMots, id){
+        check(listeMots, Array);
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id}, {$set:{listeMots: listeMots}});
+    }
 });
 

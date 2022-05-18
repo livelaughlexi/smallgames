@@ -1,35 +1,32 @@
 import { Meteor } from 'meteor/meteor';
 import { SourceImage } from '../imports/db/sourceImages.js';
-// eslint-disable-next-line no-unused-vars
 import { imagesUtilisees } from '../imports/db/imagesUtilisees.js';
 import '../imports/api/jeuImagesPublications';
+import { check } from 'meteor/check';
 
 
 Meteor.startup(() => {
   // code to run on server at startup
   if (SourceImage.find().count() === 0) {
-        /* SourceImage.insert({source:'/jeuImages/aides/argent.jpg', nom:'argent', type:'aide'});
-        SourceImage.insert({source:'/jeuImages/aides/armee.jpg', nom:'armee' , type:'aide'});
-        SourceImage.insert({source:'/jeuImages/aides/bois.jpg', nom:'bois' , type:'aide' });
-        SourceImage.insert({source:'/jeuImages/aides/cafe.jpg', nom:'cafe' , type:'aide'});
-        SourceImage.insert({source:'/jeuImages/aides/carte.jpg', nom:'carte' , type:'aide' });
-        SourceImage.insert({source:'/jeuImages/aides/eau.jpg', nom:'eau' , type:'aide' });
-        SourceImage.insert({source:'/jeuImages/aides/eclair.jpg', nom:'eclair' , type:'aide'});
-        SourceImage.insert({source:'/jeuImages/aides/pomme.jpg', nom:'pomme' , type:'aide' });
-        SourceImage.insert({source:'/jeuImages/aides/tempeteMer.jpg', nom:'tempeteMer' , type:'aide'});
-        SourceImage.insert({source:'/jeuImages/aides/unil.jpg', nom:'unil' , type:'aide' });
-        SourceImage.insert({source:'/jeuImages/reponses/moto.jpg', nom:'moto' , type:'reponse' });
-        SourceImage.insert({source:'/jeuImages/reponses/hockey.jpg', nom:'hockey' , type:'reponse'}); */
-
         baseSourceImage.forEach(x => SourceImage.insert(x));
   }
 });
 
-/*
-Meteor.users.deny({
-  update() { return true; }
+Meteor.methods({
+  'ajouterScoreImagesJeu'(idPartie, score){
+    check(idPartie, String);
+    check(score, Number);
+    let joueur1 = imagesUtilisees.findOne({_id: idPartie}).idJ1;
+    let joueur2 = imagesUtilisees.findOne({_id: idPartie}).idJ2;
+    Meteor.users.update({_id: joueur1}, {$inc: {'profile.score': score}});
+    Meteor.users.update({_id: joueur2}, {$inc: {'profile.score': score}});
+    if (!this.userId){
+      throw new Meteor.Error('Not authorized.');
+    }
+    imagesUtilisees.remove({_id: idPartie});
+  }
 });
-*/
+
 
 let baseSourceImage = [
   {

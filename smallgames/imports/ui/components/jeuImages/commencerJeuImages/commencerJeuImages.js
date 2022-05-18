@@ -17,6 +17,9 @@ import { imagesUtilisees } from '../../../../db/imagesUtilisees';
 
 Template.commencerJeuImages.onCreated(function(){
     this.subscribe('partiesLancees');
+    this.subscribe('sourceJeuImages');
+    this.subscribe('motsJeuImages');
+    
 });
 
 Template.commencerJeuImages.events({
