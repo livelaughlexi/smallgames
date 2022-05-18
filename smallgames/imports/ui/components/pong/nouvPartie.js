@@ -1,7 +1,6 @@
 import './nouvPartie.html';
 import { Template } from 'meteor/templating'
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-
 import kaboom from "kaboom/dist/kaboom.mjs";
 
 
@@ -245,7 +244,7 @@ scene("lose", ({ score }) => {
     ]);
 
     add([
-        text(`PRESS ANY KEY TO RESTART`, {
+        text(`PRESS SPACE TO RESTART`, {
             size: 16,
             width: width(),
             font: "breakout"
@@ -253,8 +252,7 @@ scene("lose", ({ score }) => {
         pos(width()/2, height()*(3/4)),
     ]);
 
-    onKeyPress(start);
-    onMousePress(start);
+    onKeyPress("space", start);
 });
 
 scene("win", ({ score }) => {
