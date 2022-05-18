@@ -1,33 +1,24 @@
 import { Template } from 'meteor/templating';
-import { SourceImage } from '../../../../api/sourceImages.js';
-import { imagesUtilisees } from '../../../../api/imagesUtilisees.js';
-import { Session } from 'meteor/session';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Meteor } from 'meteor/meteor';
 
 import './afficherImage.html';
+import { imagesUtilisees } from '../../../../db/imagesUtilisees.js';
 
+Template.afficherImage.onCreated(function (){
+    this.subscribe('sourceJeuImages');
+    this.subscribe('imagesUtiliseesDB');        //A enlever sur le final, sert juste à voir si les donnees sont bien rentrées
 
-let listeImagesAide = [];   //pour pouvoir accéder sur event
+    /* this.subscribe('sourceImage');
+    let base = SourceImage.find({}).fetch();       // A utiliser lorsqu'on rajoute de nouveaux éléments dans la base (renvoi la liste des éléments pour ajouter sur main.js cote server)
+    console.log(base); */
+}); 
+
+let listeImagesAide = []
 Template.afficherImage.helpers({
     sourceImage(){
-        listeImagesAide = []; //pour reset la liste
-        let nombresRandom = [];
-        let nombreImages = SourceImage.find({type: "aide"}).count();
-        console.log("nombre images c'est: " + nombreImages); 
-        nombreImages = 50;    //a changer dès que j'ai compris pourquoi nombreImages retourne parfois 7, parfois la bonne réponse
-        for(let i = 0; i < 9; i++)
-        {  
-            let random = Math.floor(Math.random()*nombreImages);
-
-            if(nombresRandom.includes(random)){
-                i--;
-            }
-            else{
-                nombresRandom.push(random);
-                listeImagesAide.push(SourceImage.findOne({type: "aide"}, {skip: random}).source); //prend uniquement les images de type aide
-            }
-        }
-        // eslint-disable-next-line no-undef
+        let idPage = FlowRouter.getParam('_id');
+        listeImagesAide = imagesUtilisees.findOne({_id: idPage})?.listeImages;
         return listeImagesAide;
     },
 });
@@ -51,11 +42,11 @@ Template.afficherImage.events({
     "click .confirmer"() {
         if(nombreImagesSelectionnees === 3)
         {
-            // eslint-disable-next-line meteor/no-session
-            let mot = Session.get('mot');
-            imagesUtilisees.insert({image0: imagesSelectionnes[0], image1: imagesSelectionnes[1], image2: imagesSelectionnes[2], mot: mot});
-            //ajouter redirection vers afficherImage2
-            FlowRouter.go('/jeuImages2');
+            let idPage = FlowRouter.getParam('_id');
+            Meteor.call('insererImagesChoisies', imagesSelectionnes[0], imagesSelectionnes[1], imagesSelectionnes[2], idPage);
+            nombreImagesSelectionnees = 0;
+            //ajouter redirection vers play
+            FlowRouter.go('/play');
         }
         else{
             // eslint-disable-next-line no-undef

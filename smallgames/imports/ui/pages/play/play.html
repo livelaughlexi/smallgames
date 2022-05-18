@@ -1,22 +1,16 @@
 <template name="play">
     {{> globalHeader}}
     <div class="mainContainer">
-        <h1>À quoi veux-tu jouer aujourd'hui?</h1>
+        <h1>Bonjour{{#if currentUser}} {{currentUser.username}}{{/if}}, à quoi veux-tu jouer aujourd'hui?</h1>
         <div class="games">
-            <a class="noStyle" href="{{urlFor 'jeuImages'}}">
-                <div class="game pictureIt">
-                    <img src="/images/pictureIt.jpg" alt="">
-                    <h2>picture it!</h2>
-                    <p>Essaie de comprendre quel mot ton·ta coéquipier·ère essaie de te faire deviner!</p>
-                </div>
-            </a>
+            {{> commencerJeuImages}}
             <a class="noStyle" href="{{urlFor 'pong'}}">
                 <div class="game pong">
                     <img src="/images/pong.jpg" alt="">
                     <h2>pong</h2>
                     <p>Le classique!</p>
                 </div>
-            </a>
+            </a>        
         </div>
     </div>
 </template>

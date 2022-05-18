@@ -1,0 +1,9 @@
+<template name="register">
+    <div class="homeMainContent">
+        <div class="homeContainer">
+            {{#unless currentUser}}
+                {{> registerForm}}
+             {{/unless}}
+        </div>
+    </div>
+</template>
