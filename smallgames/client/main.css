@@ -82,9 +82,9 @@
 
 .homeContainer {
   background: #fff;
-  width: 50%;
+  max-width: 50%;
   border-radius: 20px;
-  padding: 20px 25px 20px 25px;
+  padding: 30px 35px 30px 35px;
   text-align: center;
   box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
@@ -232,3 +232,29 @@ body {
   text-align: center;
 }
 
+/* LOGIN STYLES */
+
+.loginInput {
+  width: auto;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Gordita', sans-serif;
+}
+
+.loginInput::placeholder {
+  color: #000 !important;
+}
+
+.forgotPassword a {
+  color: #000;
+
+}
+
+.noAccount p {
+  color: gray;
+  font-size: 14px;
+}

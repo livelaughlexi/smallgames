@@ -1,8 +1,13 @@
 <template name="loginForm">
-    <h2>Login</h2>
+    <h2>Connexion</h2>
     <form class="login">
-        <p>Email: <input type="email" name="email"></p>
-        <p>Password: <input type="password" name="password"></p>
-        <p><input type="submit" value="Login"></p>
+        <input class="loginInput loginEmail" type="email" name="email" placeholder="Ton adresse mail"><br />
+        <input class="loginInput loginPassword" type="password" name="password" placeholder="Ton mot de passe">
+        <p><input class="globalBoutonBlack" type="submit" value="Login"></p>
     </form>
+    <div class="login forgotPassword"><a href="/forgot">Mot de passe oublié?</a></div>
+    <div class="login noAccount">
+        <p>Tu n'as pas encore de compte?</p>
+        <a class="globalBoutonWhite" href="/register">Inscription</a>
+    </div>
 </template>
