@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Meteor } from 'meteor/meteor';
+import Swal from 'sweetalert2';
 
 import './afficherImage.html';
 import { imagesUtilisees } from '../../../../db/imagesUtilisees.js';
@@ -42,15 +43,33 @@ Template.afficherImage.events({
     "click .confirmer"() {
         if(nombreImagesSelectionnees === 3)
         {
-            let idPage = FlowRouter.getParam('_id');
-            Meteor.call('insererImagesChoisies', imagesSelectionnes[0], imagesSelectionnes[1], imagesSelectionnes[2], idPage);
-            nombreImagesSelectionnees = 0;
-            //ajouter redirection vers play
-            FlowRouter.go('/play');
+            Swal.fire({
+                title: 'Voulez vous confirmer votre choix?',
+                text: "Vous ne le pourrez plus changer",
+                showCancelButton: true,
+                icon: 'warning',
+                confirmButtonText: 'Confirmer mon choix',
+                cancelButtonText: 'Annuler',
+            }).then((result => {
+                if(result.isConfirmed) {
+                    Swal.fire(
+                        'Choix confirmé!',
+                        "Il suffit désormais d'attendre votre partenaire!",
+                        'success'
+                    )
+                    let idPage = FlowRouter.getParam('_id');
+                    Meteor.call('insererImagesChoisies', imagesSelectionnes[0], imagesSelectionnes[1], imagesSelectionnes[2], idPage);
+                    nombreImagesSelectionnees = 0;
+                    //ajouter redirection vers play
+                    FlowRouter.go('/play');
+                }
+            }));
         }
         else{
-            // eslint-disable-next-line no-undef
-            window.alert("vous n'avez pas séléctionné assez d'images");
+            Swal.fire({
+                icon: 'warning',
+                title: "Vous n'avez pas séléctionné assez d'images"
+            });
         }
     }
 });

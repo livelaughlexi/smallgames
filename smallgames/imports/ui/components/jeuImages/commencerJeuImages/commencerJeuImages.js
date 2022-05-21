@@ -18,20 +18,13 @@ Template.commencerJeuImages.onCreated(function(){
 Template.commencerJeuImages.events({
     "click .game"(){
         Swal.fire({
-            title: 'Bienvenu sur le jeu des images!',
+            title: 'Bienvenu.e sur le jeu des images!',
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "règles",
-            denyButtonText: "scoreboard",
-            cancelButtonText: "Jouer!",
+            confirmButtonText: "Jouer!",
+            denyButtonText: "Informations",
         }).then((result) => {
             if(result.isConfirmed){
-                //afficher règles
-            }
-            else if (result.isDenied){
-                //afficher scoreboard
-            }
-            else if (result.isDismissed){
                 //// si joueur n'a pas fini une partie --> directionné sur la partie
                 //// si joueur n'a pas de partie commencées -->
                                                             //// si une partie joueur 2 est dispo --> joueur2
@@ -130,6 +123,9 @@ Template.commencerJeuImages.events({
                 
                     FlowRouter.go(`/jeuImages/${id}`);
                 }
+            }
+            else if (result.isDenied){
+                //afficher scoreboard
             }
         });
         

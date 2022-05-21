@@ -44,21 +44,26 @@ Template.afficherMot2.events({
         //changer les window.alert
         if(reponseChoisie === 0)
         {
-            // eslint-disable-next-line no-undef
-            Swal.fire("Vous n'avez pas choisi de mot");
+            Swal.fire({
+                icon: 'warning',
+                title: "Vous n'avez pas séléctionné de mot"
+            });
         }
         else if (reponseChoisie === motADeviner)
         {
-            // eslint-disable-next-line no-undef
-            Swal.fire("Vous avez trouvé la bonne réponse");
-            
             let idPage = FlowRouter.getParam('_id'); 
-            //trouver score à attribuer
+            //score à attibuer
             let points = vies*30+10;
             Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
 
             motSelectionne = false;
             FlowRouter.go('/play');
+            Swal.fire({
+                icon: 'success',
+                title: 'Vous avez trouvé la bonne réponse!',
+                text: `Vous avez gagné ${points} points.`,
+            });
+            
         }
         else{
             // ne pas reprendre le meme mot
@@ -69,22 +74,29 @@ Template.afficherMot2.events({
             motSelectionne = false;
             if(vies === 0)
             {
-                // eslint-disable-next-line no-undef
-                Swal.fire("Vous avez perdu");
-                
-                //trouver score à attribuer
-
                 let idPage = FlowRouter.getParam('_id');
                 let points = 10;
                 Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
                 reponseChoisie = 0;
                 motSelectionne = false;
                 FlowRouter.go('/play');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Vous avez perdu',
+                    text: `Le mot était: ${motADeviner}`,
+                }).then(() => {
+                    Swal.fire({
+                        text: 'Vous avez gagné 10 points de participation',
+                    })
+                });
             }
             else{
-                // eslint-disable-next-line no-undef
-                //window.alert(`Vous avez encore ${vies} vies`);
-                Swal.fire(`Vous avez encore ${vies} vies`);
+                reponseChoisie = 0;
+                motSelectionne = false;
+                Swal.fire({
+                    icon: 'error',
+                    title: `Vous avez encore ${vies} vies`,
+                });
             }
         }
     }
