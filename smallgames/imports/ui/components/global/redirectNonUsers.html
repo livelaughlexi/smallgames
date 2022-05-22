@@ -1,0 +1,13 @@
+<template name="redirectNonUsers">
+    {{#if loggingIn}}
+                <p style="visibility: hidden;">En cours de chargement...</p>
+            {{else}}
+                {{#if currentUser}}
+                    <p style="visibility: hidden;">Connecté</p>
+                {{else}}
+                    <script>
+                        window.location.href = '/';
+                   </script>
+                {{/if}}
+            {{/if}}
+</template>
