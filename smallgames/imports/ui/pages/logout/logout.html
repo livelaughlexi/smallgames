@@ -1,0 +1,21 @@
+<template name="logout">
+    {{#if loggingOut}}
+         <div class="logoutContent">
+             <div class="logoutContainer">
+                <h1>Déconnexion en cours!</h1>
+                <p>À bientôt!</p>
+            </div>
+        </div>
+    
+    {{else}}
+        {{#if currentUser}}
+            <script>
+                window.location.href = '/play';
+            </script>
+        {{else}}
+            <script>
+                window.location.href = '/';
+            </script>
+        {{/if}}
+    {{/if}}
+</template>

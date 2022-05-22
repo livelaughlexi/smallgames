@@ -10,6 +10,7 @@ import '../../ui/pages/play/play';
 import '../../ui/pages/notFound/notFound';
 import '../../ui/pages/pong/pong';
 import '../../ui/pages/pong/newGame';
+import '../../ui/pages/logout/logout';
 
 
 
@@ -80,5 +81,13 @@ FlowRouter.route('/newGame', {
     name: 'newGame',
     action() {
         this.render('newGame');
+    },
+});
+
+FlowRouter.route('/logout', {
+    name: 'logout',
+    action() {
+        Meteor.logout();
+        this.render('logout');
     },
 });
