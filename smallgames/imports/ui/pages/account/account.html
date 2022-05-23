@@ -1,0 +1,12 @@
+<template name="account">
+    {{> redirectNonUsers}}
+    {{> globalHeader}}
+    <div class="mainContainer">
+        <h1>Bonjour {{currentUser.username}}!</h1>
+        <div class="games">  
+                <div class="game pong">
+                 {{> changePasswordForm}}
+                </div>      
+        </div>
+    </div>
+</template>

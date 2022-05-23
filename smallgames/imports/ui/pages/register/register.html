@@ -6,6 +6,9 @@
         {{else}}
             {{#if currentUser}}
                 <p>Tu es connecté, en cours de redirection…</p>
+                <script>
+                    window.location.href = '/play';
+                   </script>
             {{else}}
                 {{> registerForm}}
             {{/if}}
