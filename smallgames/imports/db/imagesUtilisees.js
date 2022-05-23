@@ -11,7 +11,7 @@ Meteor.methods({
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: "", listeImages: null, listeMots: null});
+        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: "", listeImages: null, listeMots: null, vies: 3, motsErrones: []});
     },
     'insererImagesChoisies'(imgSel0, imgSel1, imgSel2, id){
         check(imgSel0, String);
@@ -30,7 +30,7 @@ Meteor.methods({
     'ajouterListeImages'(listeImages, id){
         check(listeImages, Array);
         check(id, String);
-        if (!this.userId){
+        if (!this.userId){ 
             throw new Meteor.Error('Not authorized.');
         }
         imagesUtilisees.update({_id: id}, {$set:{listeImages: listeImages}});
@@ -50,6 +50,21 @@ Meteor.methods({
             throw new Meteor.Error('Not authorized.');
         }
         imagesUtilisees.update({_id: id}, {$set:{listeMots: listeMots}});
+    },
+    'perteVie'(id){
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id},{$inc: {vies: -1}});
+    },
+    'motsErrones'(mot, id){
+        check(mot, String);
+        check(id, String);
+        if (!this.userId){
+            throw new Meteor.Error('Not authorized.');
+        }
+        imagesUtilisees.update({_id: id}, {$push: { motsErrones: mot }});
     }
 });
  

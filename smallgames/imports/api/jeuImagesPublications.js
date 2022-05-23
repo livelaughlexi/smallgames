@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { SourceImage } from '../db/sourceImages';
 import { imagesUtilisees } from '../db/imagesUtilisees';
+import { partiesFinies } from '../db/partiesFinies';
 
 Meteor.publish('sourceJeuImages', function publishSourceJeuImages(){
     return SourceImage.find({type: "aide"});
@@ -29,4 +30,8 @@ Meteor.publish('partiesLancees', function(){
 
 Meteor.publish('sourceImages', function(){
     return SourceImage.find({});                    //pour le développement
+});
+
+Meteor.publish('partiesFinies', function(){
+    return partiesFinies.find({});
 })
