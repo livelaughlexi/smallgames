@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { SourceImage } from '../imports/db/sourceImages.js';
 import { imagesUtilisees } from '../imports/db/imagesUtilisees.js';
+import { partiesFinies } from '../imports/db/partiesFinies.js';
 import '../imports/api/jeuImagesPublications';
 import { check } from 'meteor/check';
 
@@ -16,13 +17,14 @@ Meteor.methods({
   'ajouterScoreImagesJeu'(idPartie, score){
     check(idPartie, String);
     check(score, Number);
+    if (!this.userId){
+      throw new Meteor.Error('Not authorized.');
+    }
     let joueur1 = imagesUtilisees.findOne({_id: idPartie}).idJ1;
     let joueur2 = imagesUtilisees.findOne({_id: idPartie}).idJ2;
     Meteor.users.update({_id: joueur1}, {$inc: {'profile.score': score}});
     Meteor.users.update({_id: joueur2}, {$inc: {'profile.score': score}});
-    if (!this.userId){
-      throw new Meteor.Error('Not authorized.');
-    }
+    partiesFinies.insert({idJ1: joueur1, score: score});
     imagesUtilisees.remove({_id: idPartie});
   }
 });
