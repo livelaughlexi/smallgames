@@ -1,9 +1,11 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Accounts } from 'meteor/accounts-base';
 
 import '../../ui/pages/home/home';
 import '../../ui/pages/jeuImages/jeuImages';
 import '../../ui/pages/register/register';
 import '../../ui/pages/login/login';
+import '../../ui/pages/account/account';
 import '../../ui/pages/leaderboard/leaderboard';
 import '../../ui/pages/jeuImages/jeuImages2';
 import '../../ui/pages/play/play';
@@ -14,6 +16,9 @@ import '../../ui/pages/logout/logout';
 import '../../ui/pages/account/account';
 
 
+import '../../ui/pages/play/play'
+import '../../ui/pages/notFound/notFound'
+import '../../ui/pages/onResetPasswordLink/onResetPasswordLink';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -98,4 +103,35 @@ FlowRouter.route('/logout', {
         Meteor.logout();
         this.render('logout');
     },
+FlowRouter.route('/account', {
+    name: 'account',
+    action() {
+        this.render('account');
+    },
+});
+
+FlowRouter.route('*', {
+    action() {
+      this.render('notFound');
+    }
+  });
+//configurer la route pour l'email de vérification
+FlowRouter.route('/verify-email/:token', {
+    name: 'verify-email',
+    action( params ) {
+        Accounts.verifyEmail( params.token, ( error ) => {
+            if ( error ) {
+                alert( error.reason, 'danger' );
+            } else {
+                FlowRouter.go('/');
+                alert( 'Adresse email vérifiée !', 'success');
+            }
+        });
+    }
+});
+
+FlowRouter.route('/reset-password/:token', {
+    action(){
+        this.render('onResetPasswordLink')
+    }
 });

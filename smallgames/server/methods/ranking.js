@@ -1,0 +1,41 @@
+import { Meteor } from 'meteor/meteor';
+
+//fonctions de test pour la création d'users random pour vérifier la fonctionnalité du leaderboard
+function randomUsername(){
+    let randomUsername = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    for (let i = 0; i < 6; i++){
+      randomUsername += characters.charAt(Math.ceil(Math.random()*characters.length + 1))
+    }
+    return randomUsername
+  }
+  function randomScore(){
+    let result = Math.ceil(Math.random()*500);
+    return result;
+  }
+
+Meteor.methods({
+//methods test pour vérifier la fonctionnalité du leaderboard
+        'addPlayer': function(){
+            Meteor.users.insert({
+                username: randomUsername(),
+                profile: {
+                  generalScore: randomScore()
+                  },
+                },
+          )},
+        
+        'givePointsToCurrentAccountGeneral': function(){
+            let currentUser = Meteor.userId();
+            Meteor.users.update({ _id: currentUser}, { $inc: { 'profile.generalScore': 12}})
+        },
+        'givePointsToCurrentAccountPong': function(){
+          let currentUser = Meteor.userId();
+          Meteor.users.update({ _id: currentUser}, { $inc: { 'profile.pongScore': 12, 'profile.generalScore': 12}})
+        },
+        'givePointsToCurrentAccountImage': function(){
+          let currentUser = Meteor.userId();
+          Meteor.users.update({ _id: currentUser}, { $inc: { 'profile.imageScore': 12, 'profile.generalScore': 12}})
+      },
+
+});

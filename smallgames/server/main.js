@@ -5,12 +5,24 @@ import { partiesFinies } from '../imports/db/partiesFinies.js';
 import '../imports/api/jeuImagesPublications';
 import { check } from 'meteor/check';
 
+import { SourceImage } from '../imports/api/sourceImages.js';
+
+// eslint-disable-next-line no-unused-vars
+import { imagesUtilisees } from '../imports/api/imagesUtilisees.js';
+import './methods/ranking';
+import './methods/accounts';
+import './email/email';
+import './publish/publish';
 
 Meteor.startup(() => {
   // code to run on server at startup
   if (SourceImage.find().count() === 0) {
         baseSourceImage.forEach(x => SourceImage.insert(x));
   }
+    //configuration de l'adresse mail pour envoyer des mails
+    process.env.MAIL_URL = 'smtps://adrianfeuler@gmail.com:ceciEst1Test-PourMeteor@smtp.gmail.com:465/';
+    //Accounts.emailTemplates.from = 'no-reply@smallgames.com'
+  
 });
 
 Meteor.methods({
