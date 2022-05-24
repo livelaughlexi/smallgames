@@ -70,6 +70,8 @@
 .mainMenu {
   list-style-type: none;
   padding-left: 0;
+  position: relative;
+
 }
 
 .mainMenu li {
@@ -84,6 +86,7 @@
   color: #000;
   text-decoration: underline; 
 }
+
 
 /* ----------
 /* 3. UTILITAIRES
