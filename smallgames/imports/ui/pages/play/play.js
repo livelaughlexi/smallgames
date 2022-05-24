@@ -13,15 +13,15 @@ Template.play.onCreated(function(){
 
 Template.play.onRendered(function(){
     this.autorun(() => {
-        let partiesTerminees = partiesFinies.find({idJ1: Meteor.userId()}).fetch();     //il n'y a que le dernier qui apparait!!
+        let partiesTerminees = partiesFinies.find({idJ1: Meteor.userId()}).fetch();   
         for(let i = 0; i < partiesTerminees.length; i++){
             Swal.fire({
-                title: `Le joueur 2 vient de vinir sa partie!`,
+                title: `${partiesTerminees[i].nomJ2} vient de vinir sa partie!`,
                 text: `Vous avez gagné ${partiesTerminees[i].score} points`
+            }).then(() => {
+                let idPartie = partiesTerminees[i]._id;
+                Meteor.call('deleteDB', idPartie);
             });
-            let idPartie = partiesTerminees[0]._id;
-            Meteor.call('deleteDB', idPartie);
         }
-
     });
 });

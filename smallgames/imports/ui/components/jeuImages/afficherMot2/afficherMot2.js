@@ -52,7 +52,6 @@ let reponseChoisie = 0;
 Template.afficherMot2.events({
     "click .reponsesMots"(event) {
         const target = event.target;
-        console.log(imagesUtilisees.find({idJ1: Meteor.userId(), partieTermine: true}))
         if(target.style.filter === "opacity(100%)" && !motSelectionne && target.style.backgroundColor != "red"){
             target.style.filter = "opacity(50%)";   //séléctionner
             motSelectionne = true;
