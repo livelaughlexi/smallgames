@@ -11,12 +11,17 @@ Template.nouvPartie.events({
      }
  })
 
+// window.onhashchange = function() {
+//    location.reload()
+//   }
+
 Template.nouvPartie.onRendered(function () {
     
+
     function startCountdown(seconds) {
         let counter = seconds;  
         const interval = setInterval(() => {
-
+            
                 
 
             add([
@@ -107,8 +112,8 @@ const LEVELOPT = {
         origin("center"),
         "ball",
         {
-            hspeed: 200,
-            vspeed: 150
+            hspeed: 150,
+            vspeed: 100
         }
     ]
 }
@@ -127,7 +132,8 @@ const paddle = get("paddle")[0];
 }
 }); */
 
-onKeyDown("a", () => {
+// Keyboard controls
+/* onKeyDown("a", () => {
     paddle.move(-paddle.speed, 0);
 })
 onKeyDown("d", () => {
@@ -138,7 +144,18 @@ onKeyDown("left", () => {
 })
 onKeyDown("right", () => {
     paddle.move(paddle.speed, 0);
-})
+}) */
+// mouse controls
+onUpdate(() => {
+    if (mousePos().x > 0 && mousePos().x < width() && mousePos().y > 0 && mousePos().y < height()) {
+        if (mousePos().x < paddle.worldArea().p1.x) { // left
+            paddle.move(-paddle.speed, 0);
+        }
+        else if (mousePos().x > paddle.worldArea().p2.x) { // right
+            paddle.move(paddle.speed, 0);
+        }
+    }
+});
 
   // ball movement
 onUpdate("ball", (ball) => {
@@ -161,8 +178,8 @@ onUpdate("ball", (ball) => {
     else {
       ball.pos.x = width()/2;
       ball.pos.y = height()/2;
-      ball.hspeed = 200;
-      ball.vspeed = 150;
+      ball.hspeed = 150;
+      ball.vspeed = 100;
     }
   }
   
