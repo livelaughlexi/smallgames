@@ -60,7 +60,7 @@ Template.afficherMot2.events({
         else if(target.style.filter === "opacity(50%)"){
             target.style.filter = "opacity(100%)";  //désélectionner (si le nombre max d'images n'est pas atteint)
             motSelectionne = false;
-            reponseChoisie = 0;         
+            reponseChoisie = 0;        
         }
     },
     "click .confirmer"() {
