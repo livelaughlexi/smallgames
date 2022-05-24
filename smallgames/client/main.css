@@ -1,5 +1,8 @@
-/* BEGIN Importation police */
+/* ------------
+/* 1. TYPOGRAPHIE
+/* ------------*/ 
 
+/* Regular */
 @font-face {
   font-family: 'Gordita';
   src: url('/fonts/gorditaregular-webfont.woff2') format('woff2'),
@@ -9,9 +12,7 @@
 
 }
 
-
-
-
+/* Regular Italic */
 @font-face {
   font-family: 'Gordita';
   src: url('/fonts/gorditaregularitalic-webfont.woff2') format('woff2'),
@@ -21,9 +22,7 @@
 
 }
 
-
-
-
+/* Bold */
 @font-face {
   font-family: 'Gordita';
   src: url('/fonts/gorditabold-webfont.woff2') format('woff2'),
@@ -33,9 +32,7 @@
 
 }
 
-
-
-
+/* Bold Italic */
 @font-face {
   font-family: 'Gordita';
   src: url('/fonts/gorditabolditalic-webfont.woff2') format('woff2'),
@@ -44,9 +41,10 @@
   font-style: italic;
 }
 
-/* END Importation police */
+/* ----------
+/* 2. NAVIGATION
+/* ---------- */
 
-/* BEGIN Style de la navigation */
 
 .globalHeader {
   background: #fff;
@@ -69,7 +67,12 @@
   margin: 0 15px 0 15px;
 }
 
-/* BEGIN Design Homepage */
+/* ----------
+/* 3. UTILITAIRES
+/* ---------- */
+
+/* 3.1 PAGE D'ACCUEIL & LOGIN/REGISTER (Utilisateurs déconnectés) */
+
 .homeMainContent {
   background-image: url(/images/globalBackground.jpg);
   background-size: cover;
@@ -89,24 +92,37 @@
   box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
-.logoutContent {
-  background: radial-gradient(circle at center, #036016 0, #3bb273 100%);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 3.2 STYLES DES FORMULAIRES */
+
+.loginInput {
+  width: auto;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Gordita', sans-serif;
+}
+
+.loginInput::placeholder {
+  color: #000 !important;
+}
+
+.forgotPassword a {
+  color: #000;
 
 }
 
-.notFoundMainContent {
-  background: radial-gradient(circle at center, #5c2751 0, #ba00a8 100%);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.noAccount p {
+  color: gray;
+  font-size: 14px;
 }
 
+
+/* 3.3 PAGES SPÉCIALES (404 et déconnexion) */
+
+/* Styles globaux pour ces pages */
 .notFoundContainer, .logoutContainer {
   color: #fff;
   width: 50%;
@@ -129,7 +145,27 @@
   color: #fff;
 }
 
-/* BEGIN GLOBAL STYLES */
+/* Page déconnexion réussie */
+.logoutContent {
+  background: radial-gradient(circle at center, #036016 0, #3bb273 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Page 404 */
+.notFoundMainContent {
+  background: radial-gradient(circle at center, #5c2751 0, #ba00a8 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Boutons */
 
 .buttonContainer {
   margin: 15px 0px;
@@ -169,11 +205,32 @@
   background-color: rgba(0,0,0,0.1);
 }
 
+/* ----------
+/* 4. STYLE GLOBAL POUR LES PAGES
+/* ---------- */
+
+/* Dimension générale d'une page */
 .mainContainer {
   width: calc(100%-30px);
   margin: 120px 15px 0px;
-  height: 200vh;
+  min-height: 100vh;
 }
+
+/* Pour enlever la décoration des liens */
+.noStyle {
+  text-decoration: none;
+color: #000;
+}
+
+/* Imposer la police */
+body {
+  margin:0;
+  font-family: 'Gordita';
+}
+
+/* ----------
+/* 5. PAGE PLAY 
+/* ---------- */
 
 .games a:not(:first-child) {
   margin-left: 20px;
@@ -194,10 +251,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.noStyle {
-  text-decoration: none;
-color: #000;
-}
+
 .game img {
   width: 100%;
   border-radius: 20px 20px 0 0;
@@ -211,10 +265,9 @@ color: #000;
   margin: 10px 0 10px 0;
 }
 
-body {
-  margin:0;
-  font-family: 'Gordita';
-}
+/* ----------
+/* 5. AUTRES
+/* ---------- */
 
 .aideImage{
   height: 200px;
@@ -239,33 +292,6 @@ body {
   border-radius: 2px;
   width: 100px;
   text-align: center;
-}
-
-/* LOGIN STYLES */
-
-.loginInput {
-  width: auto;
-  height: 30px;
-  border: 2px solid #000;
-  border-radius: 10px;
-  padding: 10px 15px 10px 15px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-family: 'Gordita', sans-serif;
-}
-
-.loginInput::placeholder {
-  color: #000 !important;
-}
-
-.forgotPassword a {
-  color: #000;
-
-}
-
-.noAccount p {
-  color: gray;
-  font-size: 14px;
 }
 
 .scorePong {
