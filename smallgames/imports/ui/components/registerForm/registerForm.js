@@ -5,48 +5,36 @@ import { Meteor } from 'meteor/meteor';
 import './registerForm.html';
 
 Template.registerForm.events({
-    'submit form': function(event){
+
+    'submit form': function(event, templateInstance){
         event.preventDefault();
-        let email = $('[name=email]').val();
-        let username = $('[name=username]').val();
-        let password = $('[name=password]').val();
-        //let score = 0;
+        let email = templateInstance.find('[name=email]').value;
+        let username = templateInstance.find('[name=username]').value;
+        let password = templateInstance.find('[name=password]').value;
+        let imageScore = 0;
+        let pongScore = 0;
+        let generalScore = 0;
+        
         Accounts.createUser({
             email: email,
             password: password,
             username: username,
             profile: {
-                score: 0
-            }
-            //score: score
+                //trouver comment update automatiquement le generalScore...
+                generalScore: generalScore,
+                imageScore: imageScore,
+                pongScore: pongScore,
+            }, 
+            
         }, function(error){
             console.log(error.reason);
-        });
-        /*
-        Accounts.onCreateUser((options, user) => {
-            const customizedUser = Object.assign({
-                score: 0
-            }, user);
-            if (options.profile) {
-                customizedUser.profile = options.profile;
-            }
-            return customizedUser;
-        })*/
+            document.getElementById('username').innerHTML += error.reason;
+        })
+        Meteor.call('sendVerificationLink', function(error){
+            console.log(error.reason);
+            document.getElementById('email').innerHTML += 'Entrez une adresse email valide';
+        })
+        
     }
 });
 
-if(Meteor.isServer){
-    Meteor.publish('userData', function() {
-        if (this.userId) {
-            return Meteor.users.find({_id: this.userId }, {
-                fields: { score: 1 }
-            });
-        } else {
-            this.ready();
-        }
-    });
-}
-
-if(Meteor.isClient){
-    Meteor.subscribe('userData');
-}
