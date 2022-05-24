@@ -11,6 +11,7 @@ import '../../ui/pages/notFound/notFound';
 import '../../ui/pages/pong/pong';
 import '../../ui/pages/pong/newGame';
 import '../../ui/pages/logout/logout';
+import '../../ui/pages/account/account';
 
 
 
@@ -81,6 +82,13 @@ FlowRouter.route('/newGame', {
     name: 'newGame',
     action() {
         this.render('newGame');
+    },
+});
+
+FlowRouter.route('/account', {
+    name: 'account',
+    action() {
+        this.render('account');
     },
 });
 
