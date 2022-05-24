@@ -5,10 +5,8 @@ import { partiesFinies } from '../imports/db/partiesFinies.js';
 import '../imports/api/jeuImagesPublications';
 import { check } from 'meteor/check';
 
-import { SourceImage } from '../imports/api/sourceImages.js';
 
 // eslint-disable-next-line no-unused-vars
-import { imagesUtilisees } from '../imports/api/imagesUtilisees.js';
 import './methods/ranking';
 import './methods/accounts';
 import './email/email';

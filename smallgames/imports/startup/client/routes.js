@@ -103,6 +103,7 @@ FlowRouter.route('/logout', {
         Meteor.logout();
         this.render('logout');
     },
+});
 FlowRouter.route('/account', {
     name: 'account',
     action() {
