@@ -15,9 +15,11 @@ Template.nouvPartie.events({
 Template.nouvPartie.onRendered(function () {
     
     function startCountdown(seconds) {
-        let counter = seconds;
-          
+        let counter = seconds;  
         const interval = setInterval(() => {
+
+                
+
             add([
                 text(counter, {
                     size: 72,
@@ -26,7 +28,8 @@ Template.nouvPartie.onRendered(function () {
                 }),
                 pos(width()/2, height()/2),
                 area(),
-            ]);;
+            ]);
+          
           counter--;
             
           if (counter < 0 ) {
@@ -105,8 +108,8 @@ const LEVELOPT = {
         origin("center"),
         "ball",
         {
-            hspeed: 100,
-            vspeed: 50
+            hspeed: 200,
+            vspeed: 150
         }
     ]
 }
@@ -145,8 +148,8 @@ onUpdate("ball", (ball) => {
     else {
       ball.pos.x = width()/2;
       ball.pos.y = height()/2;
-      ball.hspeed = 100;
-      ball.vspeed = 50;
+      ball.hspeed = 200;
+      ball.vspeed = 150;
     }
   }
   
