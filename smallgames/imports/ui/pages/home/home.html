@@ -1,18 +1,24 @@
 <template name="home">
-        <script>
-            window.location.href = '/play';
-        </script>
+    {{#if loggingIn}}
+        <p>En cours de chargement...</p>
     {{else}}
-     <div class="homeMainContent">
-            <div class="homeContainer">
-                <h2 class="tagline">Bienvenue sur smallgames!</h2>
-                <p><strong>smallgames</strong> est un projet lancé par 4 étudiant·e·s en informatique pour les sciences humaines à l’Université de Lausanne, dans le cadre du cours Programmation pour Internet II – Meteor.js</p>
-                <p>Le concept? Plusieurs mini-jeux, classiques et inédits, auxquels il est possible de jouer seul, entre ami·e·s ou avec le monde entier, le tout avec un système de classement</p>
-                <p><strong>Paré·e au décollage?</strong></p>
-                <div class="buttonContainer"><a class="globalBoutonBlack" href="{{urlFor 'login'}}">Connexion</a>
-                <a class="globalBoutonWhite" href="{{urlFor 'register'}}">Inscription</a></div>
+        {{#if currentUser}}
+            <p>Tu es connecté, en cours de redirection…</p>
+            <script>
+                window.location.href = '/play';
+             </script>
+        {{else}}
+            <div class="homeMainContent">
+                    <div class="homeContainer">
+                        <h2 class="tagline">Bienvenue sur smallgames!</h2>
+                        <p><strong>smallgames</strong> est un projet lancé par 4 étudiant·e·s en informatique pour les sciences humaines à l’Université de Lausanne, dans le cadre du cours Programmation pour Internet II – Meteor.js</p>
+                        <p>Le concept? Plusieurs mini-jeux, classiques et inédits, auxquels il est possible de jouer seul, entre ami·e·s ou avec le monde entier, le tout avec un système de classement</p>
+                        <p><strong>Paré·e au décollage?</strong></p>
+                        <div class="buttonContainer"><a class="globalBoutonBlack" href="{{urlFor 'login'}}">Connexion</a>
+                        <a class="globalBoutonWhite" href="{{urlFor 'register'}}">Inscription</a></div>
 
+                    </div>
             </div>
-     </div>
+        {{/if}}
     {{/if}}
 </template>
