@@ -1,11 +1,11 @@
 <template name="ranking">
     <ul>
         {{#each playerNames}}
-            <li class="playerName">{{username}}: {{profile.score}}</li>
+            <li class="playerName">{{username}}: {{profile.generalScore}}</li>
         {{/each}}
     </ul>
-    <button class="increment">Give 5 points</button>
-    <button class="decrement">Take 5 points</button>
     <button class="testMethod">Créer un joueur aléatoire avec un score aléatoire</button>
-    <button class="give12PointsToAnotherAccount">Donner 12 points au compte connecté actuellement</button>
+    <button class="give12PointsToCurrentAccountPong">Donner 12 points au compte connecté actuellement, score pong</button>
+    <button class="give12PointsToCurrentAccountImage">Donner 12 points au compte connecté actuellement, score image</button>
+    <button class="give12PointsToCurrentAccountGeneral">Donner 12 points au compte connecté actuellement, score général</button>
 </template>

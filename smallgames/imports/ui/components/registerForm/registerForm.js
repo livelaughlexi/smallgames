@@ -10,13 +10,19 @@ Template.registerForm.events({
         let email = templateInstance.find('[name=email]').value;
         let username = templateInstance.find('[name=username]').value;
         let password = templateInstance.find('[name=password]').value;
+        let imageScore = 0;
+        let pongScore = 0;
+        let generalScore = imageScore + pongScore;
         
         Accounts.createUser({
             email: email,
             password: password,
             username: username,
             profile: {
-                score: 0
+                //trouver comment update automatiquement le generalScore...
+                generalScore: generalScore,
+                imageScore: imageScore,
+                pongScore: pongScore,
             }
             
         },
@@ -24,6 +30,6 @@ Template.registerForm.events({
         function(error){
             console.log(error.reason);
         });
-    }
+    },
 });
 

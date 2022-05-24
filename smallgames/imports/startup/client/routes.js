@@ -10,6 +10,7 @@ import '../../ui/pages/leaderboard/leaderboard';
 import '../../ui/pages/jeuImages/jeuImages2';
 import '../../ui/pages/play/play'
 import '../../ui/pages/notFound/notFound'
+import '../../ui/pages/onResetPasswordLink/onResetPasswordLink';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -83,5 +84,11 @@ FlowRouter.route('/verify-email/:token', {
                 alert( 'Adresse email vérifiée !', 'success');
             }
         });
+    }
+});
+
+FlowRouter.route('/reset-password/:token', {
+    action(){
+        this.render('onResetPasswordLink')
     }
 });

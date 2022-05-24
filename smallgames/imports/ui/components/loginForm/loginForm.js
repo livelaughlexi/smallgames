@@ -13,11 +13,6 @@ Template.loginForm.events({
             console.log(error.reason);
         });
     },
-    //formulaire d'envoi de mail de réinitialisation de password
-    'submit form.forgotPassword': function(event, templateInstance){
-        event.preventDefault();
-        let email = templateInstance.find('[name=email]').value;
-        console.log(email);
-        Accounts.forgotPassword( {email: email} );
+
     }
-});
+);
