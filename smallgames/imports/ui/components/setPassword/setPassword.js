@@ -1,3 +1,6 @@
+//probablement inutile maintenant
+
+/*
 import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base';
 
@@ -12,3 +15,4 @@ Template.setPassword.events({
         
     }
 })
+*/

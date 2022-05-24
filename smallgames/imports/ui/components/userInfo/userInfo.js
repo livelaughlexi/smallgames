@@ -13,7 +13,7 @@ Template.userInfo.helpers({
         return currentUsername;
     },
     currentUserScore(){
-        const currentUserScore = Meteor.user().profile.score;
+        const currentUserScore = Meteor.user().profile.generalScore;
         return currentUserScore;
     }
 })
