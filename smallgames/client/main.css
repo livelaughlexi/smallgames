@@ -67,6 +67,12 @@
   margin: 0 15px 0 15px;
 }
 
+.mainMenu {
+  list-style-type: none;
+  display: inline;
+}
+
+
 /* ----------
 /* 3. UTILITAIRES
 /* ---------- */
@@ -117,6 +123,10 @@
 .noAccount p {
   color: gray;
   font-size: 14px;
+}
+
+.changePassword {
+  text-align: center;
 }
 
 
@@ -187,7 +197,6 @@
   transition: 0.3s ease-in-out;
   background-color: rgba(0,0,0,0.8);
 }
-
 .globalBoutonWhite {
   border: 2px solid #000;
   color: #000;
@@ -250,7 +259,6 @@ body {
   transform: scale(1.01);
   transition: 0.3s ease-in-out;
 }
-
 
 .game img {
   width: 100%;
