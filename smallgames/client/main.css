@@ -69,9 +69,21 @@
 
 .mainMenu {
   list-style-type: none;
+  padding-left: 0;
+}
+
+.mainMenu li {
   display: inline;
 }
 
+.mainMenu li:not(:first-child) {
+  padding-left: 15px;
+}
+
+.mainMenu li a {
+  color: #000;
+  text-decoration: underline; 
+}
 
 /* ----------
 /* 3. UTILITAIRES
