@@ -2,9 +2,13 @@
    <header class="globalHeader">
        <div class="appNameContainer"><a href="/"><h1>🎮 smallgames</h1></a></div>
        <div class="menuContainer">
-           <nav class="loggedOutMenu">
+           <nav class="mainMenu">
+               <ul class="mainMenu">
+                    <li><a href="{{urlFor 'account'}}">Mon compte</a></li>
+                    <li><a href="{{urlFor 'leaderboard'}}">Classement</a></li>
+                    <li><a href="{{urlFor 'logout'}}">Déconnexion</a></li>
+               </ul>
            </nav>
-           <nav class="loggedInMenu"></nav>
        </div>
    </header>
 </template>

@@ -3,4 +3,5 @@
 import '../../components/jeuImages/afficherImage/afficherImage';
 import '../../components/jeuImages/afficherMot/afficherMot';
 import './jeuImages.html';
+import '../../components/global/redirectNonUsers'
 
