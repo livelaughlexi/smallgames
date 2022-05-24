@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import './registerForm.html';
 
 Template.registerForm.events({
+
     'submit form': function(event, templateInstance){
         event.preventDefault();
         let email = templateInstance.find('[name=email]').value;
@@ -12,7 +13,7 @@ Template.registerForm.events({
         let password = templateInstance.find('[name=password]').value;
         let imageScore = 0;
         let pongScore = 0;
-        let generalScore = imageScore + pongScore;
+        let generalScore = 0;
         
         Accounts.createUser({
             email: email,
@@ -23,13 +24,17 @@ Template.registerForm.events({
                 generalScore: generalScore,
                 imageScore: imageScore,
                 pongScore: pongScore,
-            }
+            }, 
             
-        },
-        Meteor.call('sendVerificationLink'),
-        function(error){
+        }, function(error){
             console.log(error.reason);
-        });
-    },
+            document.getElementById('username').innerHTML += error.reason;
+        })
+        Meteor.call('sendVerificationLink', function(error){
+            console.log(error.reason);
+            document.getElementById('email').innerHTML += 'Entrez une adresse email valide';
+        })
+        
+    }
 });
 
