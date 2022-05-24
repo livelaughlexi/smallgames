@@ -292,20 +292,39 @@ body {
 /* 5. AUTRES
 /* ---------- */
 
+.motAFaireDeviner{
+  margin: 5px;
+  font-size: larger;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  margin-bottom: 10px;  
+}
+
 .aideImage{
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border-radius: 5px;
   margin: 5px;
   border: 1px black solid;
 }
 
+.confirmer{
+  float: right;
+  padding-bottom: 30px;
+}
+
 .aideImageFlex{
   display: grid;
-  grid-template-rows: 200px 200px 200px;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px;
   gap: 10px;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 50px;
   align-items: center;
 }
 
