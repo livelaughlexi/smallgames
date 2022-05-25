@@ -69,7 +69,22 @@
 
 .mainMenu {
   list-style-type: none;
+  padding-left: 0;
+  position: relative;
+
+}
+
+.mainMenu li {
   display: inline;
+}
+
+.mainMenu li:not(:first-child) {
+  padding-left: 15px;
+}
+
+.mainMenu li a {
+  color: #000;
+  text-decoration: underline; 
 }
 
 
@@ -277,20 +292,55 @@ body {
 /* 5. AUTRES
 /* ---------- */
 
+.motAFaireDeviner{
+  margin: 5px;
+  font-size: larger;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  margin-bottom: 10px;  
+}
+
 .aideImage{
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border-radius: 5px;
   margin: 5px;
-  border: 1px black solid;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+
+.confirmer{
+  position: absolute;
+  right: 0%;
+  bottom: 10%;
+  margin-right: 10%;
+  border: 2px solid #000;
+  color: #000;
+  padding: 15px 50px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease-in-out
+}
+
+.confirmer:hover {
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  background-color: rgba(0,0,0,0.1);
 }
 
 .aideImageFlex{
   display: grid;
-  grid-template-rows: 200px 200px 200px;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px;
   gap: 10px;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 50px;
   align-items: center;
 }
 

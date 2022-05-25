@@ -1,14 +1,12 @@
 <template name="globalHeader">
    <header class="globalHeader">
-       <div class="appNameContainer"><a href="/"><h1>🎮 smallgames</h1></a></div>
-       <div class="menuContainer">
-           <nav class="mainMenuContainer">
-               <ul class="mainMenu">
-                    <li><a href="{{urlFor 'account'}}">Mon compte</a></li>
-                    <li><a href="{{urlFor 'leaderboard'}}">Classement</a></li>
-                    <li><a href="{{urlFor 'logout'}}">Déconnexion</a></li>
-               </ul>
-           </nav>
-       </div>
+            <div class="appNameContainer"><a href="{{urlFor 'play'}}"><h1>🎮 smallgames</h1></a></div>
+            <div class="mainMenuContainer">
+                    <ul class="mainMenu">
+                            <li><a href="{{urlFor 'account'}}">Mon compte</a></li>
+                            <li><a href="{{urlFor 'leaderboard'}}">Classement</a></li>
+                            <li><a href="{{urlFor 'logout'}}">Déconnexion</a></li>
+                    </ul>
+            </div>
    </header>
 </template>
