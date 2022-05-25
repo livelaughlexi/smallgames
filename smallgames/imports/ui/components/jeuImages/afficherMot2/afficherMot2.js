@@ -38,10 +38,11 @@ Template.afficherMot2.helpers({
     listeMots(){
         let idPage = FlowRouter.getParam('_id');
         listeMots = imagesUtilisees.findOne({_id: idPage})?.listeMots;
+        console.log(listeMots);
         return listeMots;
     },
     vies(){
-        let idPage = FlowRouter.getParam('_id');
+        let idPage = FlowRouter.getParam('_id'); 
         let vies = imagesUtilisees.findOne({_id: idPage})?.vies;
         return vies;
     }
