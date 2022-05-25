@@ -22,7 +22,7 @@ Template.nouvPartie.onRendered(function () {
         let counter = seconds;  
         const interval = setInterval(() => {
             
-                
+           
 
             add([
                 text(counter, {
@@ -33,7 +33,6 @@ Template.nouvPartie.onRendered(function () {
                 pos(width()/2, height()/2),
                 area(),
             ]);
-          
           counter--;
             
           if (counter < 0 ) {
