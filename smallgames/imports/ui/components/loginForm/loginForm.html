@@ -1,11 +1,11 @@
 <template name="loginForm">
     <h2>Connexion</h2>
     <form class="login">
-        <input class="loginInput loginEmail" type="email" name="email" placeholder="Ton adresse mail"><br />
-        <input class="loginInput loginPassword" type="password" name="password" placeholder="Ton mot de passe">
+        <input class="loginInput loginEmail" type="username" name="email" placeholder="Ton adresse mail ou ton nom d'utilisateur" required><br />
+        <input class="loginInput loginPassword" type="password" name="password" placeholder="Ton mot de passe" required>
         <p><input class="globalBoutonBlack" type="submit" value="Login"></p>
     </form>
-    <div class="login forgotPassword"><a href="/forgot">Mot de passe oublié?</a></div>
+    <div class="login forgotPassword"><a href="/forgotPassword">Mot de passe oublié?</a></div>
     <div class="login noAccount">
         <p>Tu n'as pas encore de compte?</p>
         <a class="globalBoutonWhite" href="/register">Inscription</a>

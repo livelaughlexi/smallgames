@@ -1,6 +1,6 @@
 import '../../components/loginForm/loginForm';
 
-import '../../components/forgotPassword/forgotPassword';
+import '../../components/forgotPasswordForm/forgotPasswordForm';
 
 import './login.html';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
