@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
+import Swal from 'sweetalert2';
 
 import './registerForm.html';
 
@@ -27,12 +28,14 @@ Template.registerForm.events({
             }, 
             
         }, function(error){
-            console.log(error.reason);
-            document.getElementById('username').innerHTML += error.reason;
+            //console.log(error.reason);
+            //document.getElementById('username').innerHTML += error.reason;
+            Swal.fire(error.reason);
         })
         Meteor.call('sendVerificationLink', function(error){
-            console.log(error.reason);
-            document.getElementById('email').innerHTML += 'Entrez une adresse email valide';
+            //console.log(error.reason);
+            //document.getElementById('email').innerHTML += 'Entrez une adresse email valide';
+            Swal.fire(error.reason);
         })
         
     }

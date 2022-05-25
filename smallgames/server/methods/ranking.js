@@ -17,10 +17,15 @@ function randomUsername(){
 Meteor.methods({
 //methods test pour vérifier la fonctionnalité du leaderboard
         'addPlayer': function(){
+          let pongScore = randomScore();
+          let imageScore = randomScore();
+          let generalScore = pongScore + imageScore;
             Meteor.users.insert({
                 username: randomUsername(),
                 profile: {
-                  generalScore: randomScore()
+                  pongScore: pongScore,
+                  imageScore: imageScore,
+                  generalScore: generalScore,
                   },
                 },
           )},
