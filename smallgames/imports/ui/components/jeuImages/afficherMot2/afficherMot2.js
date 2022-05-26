@@ -12,33 +12,12 @@ Template.afficherMot2.onCreated(function(){
 
 });
 
-Template.afficherMot2.onRendered(function(){
-    this.autorun(() => {
-        let idPage = FlowRouter.getParam('_id');
-        let motsErrones = imagesUtilisees.findOne({_id: idPage})?.motsErrones;
-        console.log(motsErrones);
-        if(motsErrones){
-            console.log("dans le if");
-            for(let i = 0; i < motsErrones.length; i++)
-            {
-                //let mot = document?.getElementById(motsErrones[i]);
-                let mot = this.find(`#${motsErrones[i]}`);
-                console.log(mot);
-                if(mot){
-                    mot.style.backgroundColor = "red";
-                    console.log("here");
-                }
-            }
-        }
-    });
-});
 
 let listeMots = [];
 Template.afficherMot2.helpers({
     listeMots(){
         let idPage = FlowRouter.getParam('_id');
         listeMots = imagesUtilisees.findOne({_id: idPage})?.listeMots;
-        console.log(listeMots);
         return listeMots;
     },
     vies(){

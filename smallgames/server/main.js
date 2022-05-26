@@ -32,8 +32,10 @@ Meteor.methods({
     }
     let joueur1 = imagesUtilisees.findOne({_id: idPartie}).idJ1;
     let joueur2 = imagesUtilisees.findOne({_id: idPartie}).idJ2;
-    Meteor.users.update({_id: joueur1}, {$inc: {'profile.score': score}});
-    Meteor.users.update({_id: joueur2}, {$inc: {'profile.score': score}});
+    Meteor.users.update({_id: joueur1}, {$inc: {'profile.generalScore': score}});
+    Meteor.users.update({_id: joueur2}, {$inc: {'profile.generalScore': score}});
+    Meteor.users.update({_id: joueur1}, {$inc: {'profile.imageScore': score}});
+    Meteor.users.update({_id: joueur2}, {$inc: {'profile.imageScore': score}});
     let nomJ2 = Meteor.users.findOne({_id: joueur2}).username;
     partiesFinies.insert({idJ1: joueur1, score: score, nomJ2: nomJ2});
     imagesUtilisees.remove({_id: idPartie});

@@ -64,7 +64,13 @@ Meteor.methods({
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.update({_id: id}, {$push: { motsErrones: mot }});
+        let objetMot = imagesUtilisees.findOne({_id: id}).listeMots;
+        for(let i = 0; i < objetMot.length; i++){
+            if(objetMot[i].mot === mot){
+                objetMot[i].motErrone = true;
+                imagesUtilisees.update({_id: id}, {$set: {listeMots: objetMot}});
+            }
+        }
     }
 });
  

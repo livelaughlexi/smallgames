@@ -70,6 +70,6 @@ Template.afficherImage.events({
                 icon: 'warning',
                 title: "Vous n'avez pas séléctionné assez d'images"
             });
-        }
+        } 
     }
 });

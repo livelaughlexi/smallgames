@@ -111,11 +111,12 @@ Template.commencerJeuImages.events({
                             }
                             else{
                                     nombresRandom.push(random);
-                                    listeMots.push(SourceImage.findOne({type: "reponse"}, {skip: random}).nom); //prend uniquement les mots de type reponse
+                                    listeMots.push({mot: SourceImage.findOne({type: "reponse"}, {skip: random}).nom, motErrone: false}); //prend uniquement les mots de type reponse
                             }
                         }
                         //ajouter MotADeviner dans la liste dans une place aléatoire
                         let placeAleatoire = Math.floor(Math.random()*9);
+                        mot = {mot : mot, motErrone: false};
                         listeMots.splice(placeAleatoire, 0, mot);
                     }
                     Meteor.call('ajouterListeMots', listeMots, id);
