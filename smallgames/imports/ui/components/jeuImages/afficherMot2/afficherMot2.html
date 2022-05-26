@@ -1,5 +1,7 @@
 <template name="afficherMot2">
-    <div class="vies">{{vies}}</div>
+    <div class="heart{{vies}}">
+      <div id="3" class="vies" >{{vies}}</div>
+    </div>
     <div class="reponsesMotsGrid">
       {{#each mot in listeMots}}
         {{#if mot.motErrone}}
