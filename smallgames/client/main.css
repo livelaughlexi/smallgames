@@ -148,13 +148,13 @@
 /* 3.3 PAGES SPÉCIALES (404 et déconnexion) */
 
 /* Styles globaux pour ces pages */
-.notFoundContainer, .logoutContainer {
+.notFoundContainer, .logoutContainer, .loadingContainer, .redirectContainer {
   color: #fff;
   width: 50%;
   text-align: center;
 }
 
-.notFoundContainer h1, .logoutContainer h1 {
+.notFoundContainer h1, .logoutContainer h1, .loadingContainer h1, .redirectContainer h1 {
   font-size: 60px;  
 }
 
@@ -183,6 +183,26 @@
 /* Page 404 */
 .notFoundMainContent {
   background: radial-gradient(circle at center, #5c2751 0, #ba00a8 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* En cours de redirection */
+.redirectContent {
+  background: radial-gradient(circle at center, #0022cc 0, #4d9de0 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Chargement en cours */
+.loadingContent {
+  background: radial-gradient(circle at center, #f18701 0, #ffc43d 100%);
   height: 100vh;
   display: flex;
   align-items: center;

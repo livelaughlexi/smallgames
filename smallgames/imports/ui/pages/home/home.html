@@ -1,12 +1,20 @@
 <template name="home">
     {{#if loggingIn}}
-        <p>En cours de chargement...</p>
+        <div class="loadingContent">
+            <div class="loadingContainer">
+                <h1>Chargement en cours…</h1> 
+            </div>
+        </div>
     {{else}}
         {{#if currentUser}}
-            <p>Tu es connecté, en cours de redirection…</p>
-            <script>
-                window.location.href = '/play';
-             </script>
+            <div class="redirectContent">
+                <div class="redirectContainer">
+                    <h1>Tu es connecté, redirection en cours…</h1> 
+                    <script>
+                        window.location.href = '/play';
+                    </script>
+                </div>
+            </div>
         {{else}}
             <div class="homeMainContent">
                     <div class="homeContainer">
