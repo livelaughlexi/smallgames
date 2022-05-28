@@ -361,8 +361,9 @@ body {
 }
 
 .game:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .game img {
@@ -376,6 +377,24 @@ body {
 
 .game h2 {
   margin: 10px 0 10px 0;
+}
+
+.goToLeaderboard {
+  margin-top: 40px;
+  margin-bottom: 40px; 
+  color: #fff !important;
+  width: calc(100% - 40px);
+  text-align: center;
+  background: radial-gradient(circle at center, #036016 0, #3bb273 100%);
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.goToLeaderboard:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 /* ----------
