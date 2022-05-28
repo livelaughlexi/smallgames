@@ -1,12 +1,22 @@
 <template name="leaderboard">
     {{> redirectNonUsers}}
-    <p>CLassement général</p>
-    {{> ranking}}
-    <p>Classement Pong</p>
-    {{> rankingPong}}
-    <p>CLassement Picture it</p>
-    {{> rankingJeuImage}}
-    <div>
-        Votre compte : {{> userInfo}}
+    {{> globalHeader}}
+    <div class="mainContainer">
+        <h1>Classement</h1>
+        <div class="mainLeaderboard">
+            <h2>Classement général</h2>
+            {{> ranking}}
+        </div>
+        <div class="pongLeaderboard">
+            <h2>Classement Pong</h2>
+            {{> rankingPong}}
+        </div>
+        <div class="jeuImagesLeaderboard">
+            <h2>Classement Picture it</h2>
+            {{> rankingJeuImage}}
+        </div>
+        <div class="accountInfoLeaderboard">
+            <p>Votre compte: {{> userInfo}}</p>
+        </div>
     </div>
 </template>
