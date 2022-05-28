@@ -18,11 +18,11 @@ Template.commencerJeuImages.onCreated(function(){
 Template.commencerJeuImages.events({
     "click .game"(){
         Swal.fire({
-            title: 'Bienvenu.e sur le jeu des images!',
+            title: 'Prêt·e à lancer une partie de picture it?',
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "Jouer!",
-            denyButtonText: "Informations",
+            confirmButtonText: "C'est parti!",
+            denyButtonText: "Règles du jeu",
         }).then((result) => {
             if(result.isConfirmed){
                 //// si joueur n'a pas fini une partie --> directionné sur la partie

@@ -2,6 +2,7 @@ import './play.html';
 import '../../components/global/globalHeader';
 import '../../components/jeuImages/commencerJeuImages/commencerJeuImages';
 import '../../components/global/redirectNonUsers'
+import '../../components/pong/commencerPong';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import Swal from 'sweetalert2';

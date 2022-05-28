@@ -2,16 +2,10 @@
     {{> redirectNonUsers}}
     {{> globalHeader}}
     <div class="mainContainer">
-        <h1>Bonjour{{#if currentUser}} {{currentUser.username}}{{/if}}, à quoi veux-tu jouer aujourd'hui?</h1>
+        <h1 id="animatedWelcome">Hello{{#if currentUser}} {{currentUser.username}}{{/if}}, bienvenue sur smallgames!</h1>
         <div class="games">
-            {{> commencerJeuImages}}
-            <a class="noStyle" href="{{urlFor 'pong'}}">
-                <div class="game pong">
-                    <img src="/images/pong.jpg" alt="">
-                    <h2>pong</h2>
-                    <p>Le classique!</p>
-                </div>
-            </a>        
+            {{> commencerJeuImages}} 
+            {{> commencerPong}}     
         </div>
     </div>
 </template>
