@@ -1,13 +1,25 @@
 <template name="redirectNonUsers">
     {{#if loggingIn}}
-                <p style="display:none;">En cours de chargement...</p>
-            {{else}}
-                {{#if currentUser}}
-                    <p style="display:none;">Connecté</p>
-                {{else}}
+        <div class="loadingContent">
+            <div class="loadingContainer">
+                <h1>Chargement en cours…</h1> 
+            </div>
+        </div>
+    {{else}}
+        {{#if currentUser}}
+            <p style="display:none;">Connecté</p>
+        {{else}}
+            <div class="noLoginRedirectContent">
+                <div class="noLoginRedirectContainer">
+                    <h1>Merci de te connecter pour voir ce contenu!</h1> 
                     <script>
-                        window.location.href = '/';
-                   </script>
-                {{/if}}
-            {{/if}}
+                        window.location.href = '/play';
+                    </script>
+                </div>
+            </div>
+            <script>
+                 window.location.href = '/';
+            </script>
+        {{/if}}
+    {{/if}}
 </template>

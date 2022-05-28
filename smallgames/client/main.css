@@ -148,13 +148,13 @@
 /* 3.3 PAGES SPÉCIALES (404 et déconnexion) */
 
 /* Styles globaux pour ces pages */
-.notFoundContainer, .logoutContainer, .loadingContainer, .redirectContainer {
+.notFoundContainer, .logoutContainer, .loadingContainer, .redirectContainer, .noLoginRedirectContainer {
   color: #fff;
   width: 50%;
   text-align: center;
 }
 
-.notFoundContainer h1, .logoutContainer h1, .loadingContainer h1, .redirectContainer h1 {
+.notFoundContainer h1, .logoutContainer h1, .loadingContainer h1, .redirectContainer h1, .noLoginRedirectContainer h1  {
   font-size: 60px;  
 }
 
@@ -203,6 +203,16 @@
 /* Chargement en cours */
 .loadingContent {
   background: radial-gradient(circle at center, #f18701 0, #ffc43d 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Redirection pour les personnes déconnectées */
+.noLoginRedirectContent {
+  background: radial-gradient(circle at center, #3c0919 0, #e15554 100%);
   height: 100vh;
   display: flex;
   align-items: center;
