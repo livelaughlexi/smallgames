@@ -17,12 +17,12 @@ Template.loginForm.events({
         Meteor.loginWithPassword(email, password, function(error){
            if(error){
                console.log(error.reason)
-                if(error.reason == 'User not found.' ){
-                    Swal.fire("Cette adresse email n'est pas enregistrée !", "<a href='/register'>Tu n'as pas encore de compte ?</a>", 'error');
-                    Swal.fire('bonjour');
+                if(error.reason == 'User not found' ){
+                    Swal.fire("Cet utilisateur n'existe pas !", "<a href='/register'>Tu n'as pas encore de compte ?</a>", 'error');
+                } else if (error.reason == 'Incorrect password'){
+                    Swal.fire('Mot de passe incorrect', '<a href=/forgotPassword>Mot de passe oublié ?</a>', 'error');
                 }
-               //Swal.fire(error.reason);
-           }
+                }
         });
     },
 

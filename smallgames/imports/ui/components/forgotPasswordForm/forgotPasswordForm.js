@@ -20,8 +20,7 @@ Template.forgotPasswordForm.events({
                 position: 'top-end',
                 icon: 'success',
                 title: 'Email envoyé',
-                showConfirmButton: true,
-                timer: 1500
+                timer: 1700
               })
             } 
           });
