@@ -1,11 +1,12 @@
 import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base'
 
-import './forgotPassword.html';
+import './forgotPasswordForm.html';
+import Swal from 'sweetalert2';
 
-Template.forgotPassword.events({
+Template.forgotPasswordForm.events({
     //formulaire d'envoi de mail de réinitialisation de password
-    'submit form.forgotPassword': function(event, templateInstance){
+    'submit form.forgotPasswordForm': function(event, templateInstance){
         event.preventDefault();
         let email = templateInstance.find('[name=email]').value;
         let options = {};
@@ -13,9 +14,14 @@ Template.forgotPassword.events({
         console.log(options);
         Accounts.forgotPassword(options, function(error){  
             if (error) { 
-              console.log(error);
+              console.log(error.reason);
             }else{
-              alert('Check your mailbox!');
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Email envoyé',
+                timer: 1700
+              })
             } 
           });
         },
