@@ -24,6 +24,9 @@ Template.commencerJeuImages.events({
             confirmButtonText: "C'est parti!",
             denyButtonText: "Règles du jeu",
         }).then((result) => {
+            if(result.isDenied){
+                FlowRouter.go('/reglesJeuImages');
+            }
             if(result.isConfirmed){
                 //// si joueur n'a pas fini une partie --> directionné sur la partie
                 //// si joueur n'a pas de partie commencées -->

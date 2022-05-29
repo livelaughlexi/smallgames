@@ -14,6 +14,7 @@ import '../../ui/pages/pong/pong';
 import '../../ui/pages/pong/newGame';
 import '../../ui/pages/logout/logout';
 import '../../ui/pages/account/account';
+import '../../ui/pages/jeuImages/reglesJeuImages';
 
 
 import '../../ui/pages/play/play'
@@ -108,6 +109,12 @@ FlowRouter.route('/account', {
     name: 'account',
     action() {
         this.render('account');
+    },
+});
+FlowRouter.route('/reglesJeuImages', {
+    name: 'reglesJeuImages',
+    action() {
+        this.render('reglesJeuImages');
     },
 });
 
