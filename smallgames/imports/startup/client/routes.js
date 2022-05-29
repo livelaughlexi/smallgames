@@ -14,6 +14,7 @@ import '../../ui/pages/pong/pong';
 import '../../ui/pages/pong/newGame';
 import '../../ui/pages/logout/logout';
 import '../../ui/pages/account/account';
+import'../../ui/pages/forgotPassword/forgotPassword';
 
 
 import '../../ui/pages/play/play'
@@ -110,6 +111,13 @@ FlowRouter.route('/account', {
         this.render('account');
     },
 });
+
+FlowRouter.route('/forgotPassword', {
+    name: 'forgotPassword',
+    action(){
+        this.render('forgotPassword');
+    },
+})
 
 FlowRouter.route('*', {
     action() {
