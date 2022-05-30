@@ -1,12 +1,16 @@
 import './nouvPartie.html';
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating'
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import kaboom from "kaboom/dist/kaboom.mjs";
+import { Session } from 'meteor/session'
 
 
 Template.nouvPartie.events({
     "click .game"(){
-        FlowRouter.go("/pong")
+        /* let scorePong1 = Session.get("ScorePong")
+        Meteor.call("ajouterScorePong", scorePong1) */
+        FlowRouter.go("/pong");
         location.reload();
      }
  })
@@ -284,7 +288,10 @@ scene("lose", ({ score }) => {
         }),
         pos(width()/2, height()*(3/4)),
     ]);
-
+    Session.set("ScorePong", score);
+    let scorePong1 = Session.get("ScorePong")
+    Meteor.call("ajouterScorePong", scorePong1)
+    console.log(scorePong1);
     onKeyPress("space", start);
 });
 
@@ -307,7 +314,7 @@ scene("win", ({ score }) => {
         }),
         pos(width()/2, height()*(3/4)),
     ]);
-
+    
     onKeyPress(start);
     onMousePress(start);
 });
@@ -744,5 +751,6 @@ const LEVELS = [
         "            @           ",
     ],
 ]; */
-
 });
+
+

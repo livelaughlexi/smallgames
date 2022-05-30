@@ -40,6 +40,18 @@ Meteor.methods({
   }
 });
 
+Meteor.methods({
+  'ajouterScorePong'(score){
+    /* check(score, Number);
+    if (!this.userId){
+      throw new Meteor.Error('Not authorized.');
+    } */
+    let joueur = Meteor.userId();
+    Meteor.users.update({_id: joueur}, {$inc: {'profile.score.generalScore': score}});
+    Meteor.users.update({_id: joueur}, {$inc: {'profile.score.pongScore': score}});
+  }
+});
+
 
 let baseSourceImage = [
   {
