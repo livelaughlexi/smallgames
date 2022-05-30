@@ -1,7 +1,15 @@
 <template name="rankingJeuImage">
-    <ul>
+    <ul class="leaderboardList">
         {{#each playerNames}}
-            <li class="playerName">{{username}}: {{profile.imageScore}}</li>
+        <li class="playerName">
+            <div class="listElement">
+                {{username}}
+            </div>
+            <div class="listElement">
+                {{profile.imageScore}}
+            </div>
+            <!--{{username}}: {{profile.generalScore}}-->
+        </li>
         {{/each}}
     </ul>
 </template>

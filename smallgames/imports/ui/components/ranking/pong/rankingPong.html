@@ -1,7 +1,15 @@
 <template name="rankingPong">
-    <ul>
+    <ul class="leaderboardList">
         {{#each playerNames}}
-            <li class="playerName">{{username}}: {{profile.pongScore}}</li>
+        <li class="playerName">
+            <div class="listElement">
+                {{username}}
+            </div>
+            <div class="listElement">
+                {{profile.pongScore}}
+            </div>
+            <!--{{username}}: {{profile.generalScore}}-->
+        </li>
         {{/each}}
     </ul>
 </template>
