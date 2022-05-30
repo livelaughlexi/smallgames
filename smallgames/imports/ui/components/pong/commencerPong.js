@@ -15,10 +15,7 @@ Template.commencerPong.events({
             denyButtonText: "Règles du jeu",
         }).then((result) => {
             if(result.isDenied){FlowRouter.go('/reglesPong');}
-            if(result.isConfirmed){ FlowRouter.go('/pong'); }
-            else if (result.isDenied){
-                //afficher scoreboard
-        }
+            else if(result.isConfirmed){ FlowRouter.go('/pong'); }
         });
     }
 });
