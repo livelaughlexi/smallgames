@@ -59,7 +59,16 @@ Template.afficherMot2.events({
             let vies = imagesUtilisees.findOne({_id: idPage})?.vies; 
             //score à attibuer
             let points = vies*30+10;
+            if(imagesUtilisees.findOne({_id: idPage})?.powerupUsed)
+            {
+                points -= 25;       
+            }
+            if(points < 0){
+                points = 0;
+            }
+
             Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
+
 
             motSelectionne = false;
             FlowRouter.go('/play');
@@ -84,6 +93,13 @@ Template.afficherMot2.events({
             {
                 let idPage = FlowRouter.getParam('_id');
                 let points = 10;
+                if(imagesUtilisees.findOne({_id: idPage})?.powerupUsed)
+                {
+                    points -= 25;       
+                }
+                if(points < 0){
+                    points = 0;
+                }
                 Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
                 reponseChoisie = 0;
                 motSelectionne = false;
@@ -94,7 +110,7 @@ Template.afficherMot2.events({
                     text: `Le mot était: ${motADeviner}`,
                 }).then(() => {
                     Swal.fire({
-                        text: 'Vous avez gagné 10 points de participation',
+                        text: `Vous avez gagné ${points} points de participation`,
                     })
                 });
             }
@@ -120,7 +136,7 @@ Template.afficherMot2.events({
             Swal.fire({
                 icon: 'warning',
                 title: 'Tu es sûr·e?',
-                text: 'Cette action te révèlera 3 mauvaises réponses, mais elle te coûtera 50 points',
+                text: 'Cette action te révèlera 3 mauvaises réponses, mais elle te coûtera 25 points',
                 showCancelButton: true,
                 confirmButtonText: "Confirmer",
             }).then((result) => {
