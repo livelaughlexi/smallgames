@@ -371,18 +371,17 @@ body {
   border-radius: 20px 20px 0 0;
 }
 
-.game h2, .game p, .blockHalf h3, .blockHalf p {
+.game h2, .game p, .blockHalf h3, .blockHalf p, .blockHalf h2 {
   padding: 0 10px 0 10px;
 }
 
-.game h2, .blockHalf h3 {
+.game h2, .blockHalf h3, .blockHalf h2 {
   margin: 10px 0 10px 0;
 }
 
 .goToLeaderboard, .blockWide {
   margin-top: 40px;
   margin-bottom: 40px; 
-  color: #fff !important;
   width: calc(100% - 40px);
   text-align: center;
   padding: 20px;
@@ -392,10 +391,21 @@ body {
 
 .greenGradient {
   background: radial-gradient(circle at center, #036016 0, #3bb273 100%);
+  color: #fff !important;
 }
 
 .blueGradient {
   background: radial-gradient(circle at center, #0022CC 0, #4d9de0 100%);
+  color: #fff !important;
+}
+
+.blockWide.noBackground {
+  border: 0.5px solid #010101;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+
+.noBackground {
+  color: #000;
 }
 
 .goToLeaderboard:hover {
