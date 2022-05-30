@@ -59,7 +59,16 @@ Template.afficherMot2.events({
             let vies = imagesUtilisees.findOne({_id: idPage})?.vies; 
             //score à attibuer
             let points = vies*30+10;
+            if(imagesUtilisees.findOne({_id: idPage})?.powerupUsed)
+            {
+                points -= 25;       
+            }
+            if(points < 0){
+                points = 0;
+            }
+
             Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
+
 
             motSelectionne = false;
             FlowRouter.go('/play');
@@ -84,6 +93,13 @@ Template.afficherMot2.events({
             {
                 let idPage = FlowRouter.getParam('_id');
                 let points = 10;
+                if(imagesUtilisees.findOne({_id: idPage})?.powerupUsed)
+                {
+                    points -= 25;       
+                }
+                if(points < 0){
+                    points = 0;
+                }
                 Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
                 reponseChoisie = 0;
                 motSelectionne = false;
@@ -94,7 +110,7 @@ Template.afficherMot2.events({
                     text: `Le mot était: ${motADeviner}`,
                 }).then(() => {
                     Swal.fire({
-                        text: 'Vous avez gagné 10 points de participation',
+                        text: `Vous avez gagné ${points} points de participation`,
                     })
                 });
             }
@@ -107,6 +123,40 @@ Template.afficherMot2.events({
                 });
             }
         }
+    },
+    "click .cacher3Mots"() {
+        let idPage = FlowRouter.getParam('_id');
+        let motADeviner = imagesUtilisees.findOne({_id: idPage})?.mot; // Trouver le mot à deviner
+        if (imagesUtilisees.findOne({_id: idPage})?.powerupUsed) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Tu as déjà utilisé ce powerup',
+            })
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Tu es sûr·e?',
+                text: 'Cette action te révèlera 3 mauvaises réponses, mais elle te coûtera 25 points',
+                showCancelButton: true,
+                confirmButtonText: "Confirmer",
+            }).then((result) => {
+                if(result.isConfirmed){
+                    let unchosenWords = listeMots.filter((word) => word.motErrone == false); // Trouver les mots qui n'ont pas déjà été incorrectement choisis
+                    let hidableWords = unchosenWords.filter((word) => word.mot !== motADeviner) // Crée un tableau avec seulement les mots qui sont faux
+                    let sortedWords = hidableWords.sort(() => 0.5 - Math.random()); // Mélange aléatoirement les mots de la liste
+                    let hiddenWords = sortedWords.splice(0, 3);
+                    for (let i=0; i < hiddenWords.length; i++ ) {
+                            let mot = hiddenWords[i].mot 
+                            let modifiables = document.getElementById(mot);
+                            modifiables.style.filter = "opacity(100%)";
+                            modifiables.style.backgroundColor = "red";
+                            Meteor.call('motsErrones', mot, idPage);
+                    }
+
+                    Meteor.call('utiliserPowerupChangerImages', motADeviner, idPage);
+
+                }
+            });
+        }
     }
 });
-
