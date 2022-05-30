@@ -16,6 +16,7 @@ import '../../ui/pages/logout/logout';
 import '../../ui/pages/account/account';
 import '../../ui/pages/jeuImages/reglesJeuImages';
 import'../../ui/pages/forgotPassword/forgotPassword';
+import '../../ui/pages/pong/reglesPong';
 
 
 import '../../ui/pages/play/play'
@@ -150,4 +151,11 @@ FlowRouter.route('/reset-password/:token', {
     action(){
         this.render('onResetPasswordLink')
     }
+});
+
+FlowRouter.route('/reglesPong', {
+    name: 'reglesPong',
+    action() {
+        this.render('reglesPong');
+    },
 });
