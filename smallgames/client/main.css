@@ -346,11 +346,11 @@ body {
     100% {color: #000;}
 }
 
-.game.pong {
+.game.pong, .blockHalf:not(:first-child) {
   margin-left: 20px;
 }
 
-.game {
+.game, .blockHalf {
   width: 49%;
   border-radius: 20px;
   border: 0.5px solid #010101;
@@ -371,24 +371,31 @@ body {
   border-radius: 20px 20px 0 0;
 }
 
-.game h2, p {
+.game h2, .game p, .blockHalf h3, .blockHalf p {
   padding: 0 10px 0 10px;
 }
 
-.game h2 {
+.game h2, .blockHalf h3 {
   margin: 10px 0 10px 0;
 }
 
-.goToLeaderboard {
+.goToLeaderboard, .blockWide {
   margin-top: 40px;
   margin-bottom: 40px; 
   color: #fff !important;
   width: calc(100% - 40px);
   text-align: center;
-  background: radial-gradient(circle at center, #036016 0, #3bb273 100%);
   padding: 20px;
   border-radius: 20px;
   transition: 0.3s ease-in-out;
+}
+
+.greenGradient {
+  background: radial-gradient(circle at center, #036016 0, #3bb273 100%);
+}
+
+.blueGradient {
+  background: radial-gradient(circle at center, #0022CC 0, #4d9de0 100%);
 }
 
 .goToLeaderboard:hover {
