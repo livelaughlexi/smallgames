@@ -27,16 +27,53 @@ Template.nouvPartie.onRendered(function () {
         const interval = setInterval(() => {
             
            
-
+            if (counter==4){
             add([
-                text(counter, {
+                text(3, {
                     size: 72,
                     width: width(),
                     font: "breakout"
                 }),
-                pos(width()/2, height()/2),
+                pos(width()/3, height()/4),
                 area(),
             ]);
+        }
+        else if (counter==3){
+            add([
+                text(2, {
+                    size: 72,
+                    width: width(),
+                    font: "breakout"
+                }),
+                pos(width()/2, height()/4),
+                area(),
+            ]);
+        }
+        else if (counter==2){
+            add([
+                text(1, {
+                    size: 72,
+                    width: width(),
+                    font: "breakout"
+                }),
+                pos(width()*(2/3), height()/4),
+                area(),
+            ]);
+        }
+        else if (counter==1){
+            add([
+                text("START !", {
+                    size: 72,
+                    width: width(),
+                    font: "breakout"
+                    
+                }),
+                pos(width()/3, height()/2),
+                area(),
+            ]);
+        }
+        
+          
           counter--;
             
           if (counter < 0 ) {
@@ -50,7 +87,7 @@ Template.nouvPartie.onRendered(function () {
           }
         }, 1000);
       }
-      startCountdown(3);
+      startCountdown(4);
 
 // initialize context
 kaboom({
@@ -58,6 +95,14 @@ kaboom({
     height: 360,
     background: [0,0,0]
 });
+
+
+let b = (Math.ceil(Math.random()*40))+80;
+let randomDir = Math.ceil(Math.random()*2);
+if (randomDir == 2) {
+    b = -b
+}
+/* console.log(randomDir) */
 
 const LEVELOPT = {
     width: 32,
@@ -115,8 +160,8 @@ const LEVELOPT = {
         origin("center"),
         "ball",
         {
-            hspeed: 150,
-            vspeed: 100
+            hspeed: b,
+            vspeed: Math.sqrt((180*180)-(b*b)),
         }
     ]
 }
@@ -181,16 +226,22 @@ onUpdate("ball", (ball) => {
     else {
       ball.pos.x = width()/2;
       ball.pos.y = height()/2;
-      ball.hspeed = 150;
-      ball.vspeed = 100;
+      let b = (Math.ceil(Math.random()*40))+80;
+      let randomDir = Math.ceil(Math.random()*2);
+      if (randomDir == 2) {
+      b = -b
+}
+/* console.log(randomDir) */
+      ball.hspeed = b;
+      ball.vspeed = Math.sqrt((180*180)-(b*b));
     }
   }
-  
-    // move
-    ball.move(ball.hspeed, ball.vspeed);
+ball.move(ball.hspeed, ball.vspeed)
+// move
+
 });
   
-  // collisions
+// collisions
 onCollide("ball", "bouncy", (ball, bouncy) => {
     ball.vspeed = -ball.vspeed;
 
