@@ -109,8 +109,9 @@ Template.afficherMot2.events({
         }
     },
     "click .cacher3Mots"() {
-        let bouton = document.querySelector('.cacher3Mots');
-        if (bouton.id == 'used') {
+        let idPage = FlowRouter.getParam('_id');
+        let motADeviner = imagesUtilisees.findOne({_id: idPage})?.mot; // Trouver le mot à deviner
+        if (imagesUtilisees.findOne({_id: idPage})?.powerupUsed) {
             Swal.fire({
                 icon: 'error',
                 title: 'Tu as déjà utilisé ce powerup',
@@ -124,8 +125,6 @@ Template.afficherMot2.events({
                 confirmButtonText: "Confirmer",
             }).then((result) => {
                 if(result.isConfirmed){
-                    let idPage = FlowRouter.getParam('_id');
-                    let motADeviner = imagesUtilisees.findOne({_id: idPage})?.mot; // Trouver le mot à deviner
                     let unchosenWords = listeMots.filter((word) => word.motErrone == false); // Trouver les mots qui n'ont pas déjà été incorrectement choisis
                     let hidableWords = unchosenWords.filter((word) => word.mot !== motADeviner) // Crée un tableau avec seulement les mots qui sont faux
                     let sortedWords = hidableWords.sort(() => 0.5 - Math.random()); // Mélange aléatoirement les mots de la liste
@@ -138,12 +137,8 @@ Template.afficherMot2.events({
                             Meteor.call('motsErrones', mot, idPage);
                     }
 
-                    let bouton = document.querySelector('.cacher3Mots');
-                    bouton.id = "used";
+                    Meteor.call('utiliserPowerupChangerImages', motADeviner, idPage);
 
-                    let points = -50;
-
-                    Meteor.call('ajouterScoreImagesJeu', idPage, points); //in main.js (server)
                 }
             });
         }

@@ -11,7 +11,7 @@ Meteor.methods({
         if (!this.userId){
             throw new Meteor.Error('Not authorized.');
         }
-        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: "", listeImages: null, listeMots: null, vies: 3, motsErrones: []});
+        imagesUtilisees.insert({_id: id, idJ1: Meteor.userId(), J1termine: false, idJ2: "", image0: "", image1: "", image2: "", mot: "", listeImages: null, listeMots: null, vies: 3, powerupUsed: false});
     },
     'insererImagesChoisies'(imgSel0, imgSel1, imgSel2, id){
         check(imgSel0, String);
@@ -71,6 +71,12 @@ Meteor.methods({
                 imagesUtilisees.update({_id: id}, {$set: {listeMots: objetMot}});
             }
         }
+    },
+    "utiliserPowerupChangerImages"(mot, id){
+        check(mot, String);
+        check(id, String);
+        imagesUtilisees.update({_id:id},{$set:{powerupUsed: true}});
+
     }
 });
  
