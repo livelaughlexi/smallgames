@@ -413,6 +413,11 @@ body {
   color: #fff !important;
 }
 
+.purpleGradient {
+  background: radial-gradient(circle at center, #5c2751 0, #ba00a8 100%);
+  color: #fff !important;
+}
+
 .blueGradient {
   background: radial-gradient(circle at center, #0022CC 0, #4d9de0 100%);
   color: #fff !important;
