@@ -14,9 +14,9 @@ import './publish/publish';
 
 Meteor.startup(() => {
   // code to run on server at startup
-  //if (SourceImage.find().count() === 0) {
+  if (SourceImage.find().count() === 0) {
         baseSourceImage.forEach(x => SourceImage.insert(x));
-  //}
+  }
     //configuration de l'adresse mail pour envoyer des mails
     process.env.MAIL_URL = 'smtps://adrianfeuler@gmail.com:ceciEst1Test-PourMeteor@smtp.gmail.com:465/';
     //Accounts.emailTemplates.from = 'no-reply@smallgames.com'
