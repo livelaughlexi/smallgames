@@ -30,7 +30,7 @@ L'application contient 4 collections MongoDB:
 ## License
 Ce programme est un logiciel gratuit.
 
-smallgames a été développé avec le framework de développement web en Javascript _Meteor_ dans sa version 2.7.2 [meteor.com](https://meteor.com)
+smallgames a été développé avec le framework de développement web en Javascript _Meteor_ dans sa version 2.7.2. (Plus d'informations concernant Meteor et son installation sont disponibles sur [meteor.com](https://meteor.com))
 
 Les principaux modules Meteor utilisés dans ce projet sont:
 - Blaze Layout (Render des templates)
