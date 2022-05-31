@@ -20,6 +20,8 @@ Un classement est établi par jeu, et un classement général est aussi maintenu
 ## Interface
 
 ![Page d'accueil](/smallgames/public/images/readme/home.png)
+<p style="text-align: center;">La page d'accueil pour les utilisateurs non-connectés, qui leur présente le site et leur permet de se connecter ou de se créer un compte</p>
+
 
 ## Base de donées
 
