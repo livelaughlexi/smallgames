@@ -257,12 +257,12 @@
 
 button.confirmer, button.cacher3Mots {
   font-family: 'Gordita';
-  color: #fff;
-  background: #000;
+  color: #000;
+  background: #fff;
   border: 2px solid #000;
   padding: 15px 50px;
   border-radius: 10px;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.8);
   text-decoration: none;
   font-weight: 700;
   transition: 0.3s ease-in-out
@@ -271,7 +271,7 @@ button.confirmer, button.cacher3Mots {
 .confirmer:hover, .cacher3Mots:hover {
 border-radius: 20px;
 transition: 0.3s ease-in-out;
-background-color: rgba(0,0,0,0.8);
+background-color: #D6D6D6;
 }
 
 .buttonContainer {
@@ -478,27 +478,33 @@ body {
   box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
-.confirmer {
+ .confirmer {
   position: absolute;
   right: 0%;
-  bottom: 10%;
-  margin-right: 10%;
+  bottom: 2.5%;
+  margin-right: 15px;
 }
 
 .cacher3Mots {
   position: absolute;
   right: 0%;
-  bottom: 40%;
-  margin-right: 10%;
-}
+  bottom: 12%;
+  margin-right: 15px;
+} 
 
+
+
+.heart3, .heart2, .heart1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .aideImageFlex{
   display: grid;
   grid-template-rows: 200px 200px 200px;
   grid-template-columns: 200px 200px 200px;
   gap: 10px;
   justify-content: left;
-  margin-left: 50px;
   align-items: center;
 }
 
@@ -533,8 +539,8 @@ body {
   justify-content: center;
   align-items: center;
   float: right;
-  margin-right: 10%;
-  margin-top: 5px;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 
 .heart2 {
@@ -546,8 +552,8 @@ body {
   justify-content: center;
   align-items: center;
   float: right;
-  margin-right: 10%;
-  margin-top: 5px;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 
 .heart1 {
@@ -559,8 +565,8 @@ body {
   justify-content: center;
   align-items: center;
   float: right;
-  margin-right: 10%;
-  margin-top: 5px;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 
 .vies{
@@ -578,6 +584,22 @@ body {
   top:0;
   right:0;
   font-family: Gordi;
+}
+
+.jeuImagesBackground {
+  background-image: url(/images/pictureIt.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jeuImagesContainer {
+  background: #fff;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 20px;
 }
 
 /* ----------
@@ -653,4 +675,21 @@ canvas {
   position: fixed;
   top: 0;
   left: 0
+}
+
+.topLeft.white {
+  color: #fff;
+  margin-top: 20px !important; 
+  margin-left:15px;
+  margin-bottom: 40px;
+}
+
+.topRight {
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: #fff;
+  margin-top: 20px !important; 
+  margin-right:15px;
+  margin-bottom: 40px;
 }

@@ -39,22 +39,22 @@ Cette page explique à l'utilisateur les règles du jeu Picture it. Une page sim
 
 ---
 
-![Page Picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerOne.png)
+![Page Picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerOneNew.png)
 L'interface pour le joueur 1 du jeu Picture it. En haut de l'écran, le joueur voit le mot qu'il doit faire deviner à son partenaire. Sur la gauche, les 9 images à choix dont il doit en sélectionner 3. Sur la droite, le bouton qui permet de confirmer son choix.
 
 ---
 
-![Page Picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerTwo.png)
+![Page Picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerTwoNew.png)
 L'interface pour le joueur 2 du jeu Picture it. Sur la gauche, les 3 images choisies par son partenaire ainsi que les 9 propositions de mots. Sur la droite, le nombre de tentatives restantes, l'option d'utiliser un powerup, et le bouton pour confirmer son choix.
 
 ---
 
-![Exemple de pop up](/smallgames/public/images/readme/popup.png)
-Exemple de notification _pop-up_, ici pour demander à l'utilisateur de confirmer son choix d'activer son powerup
+![Exemple de pop up](/smallgames/public/images/readme/popupNew.png)
+Exemple de notification _pop-up_, ici pour demander à l'utilisateur de confirmer son choix des images.
 
 ---
 
-![Page bloc Destroyer](/smallgames/public/images/readme/blockDestroyer.png)
+![Page bloc Destroyer](/smallgames/public/images/readme/blockDestroyerNew.png)
 L'interface pour le jeu Block destroyer. 
 
 ---
