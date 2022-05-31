@@ -298,6 +298,7 @@ background-color: rgba(0,0,0,0.8);
 }
 .globalBoutonWhite {
   border: 2px solid #000;
+  background: #fff;
   color: #000;
   padding: 15px 50px;
   border-radius: 10px;
@@ -311,7 +312,7 @@ background-color: rgba(0,0,0,0.8);
 .globalBoutonWhite:hover {
   border-radius: 20px;
   transition: 0.3s ease-in-out;
-  background-color: rgba(0,0,0,0.1);
+  background-color: #D6D6D6;
   cursor: pointer;
 }
 
@@ -621,3 +622,16 @@ body {
 /* .listElement {
 
 } */
+
+/* PONG */
+
+canvas {
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  background: #fff;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
