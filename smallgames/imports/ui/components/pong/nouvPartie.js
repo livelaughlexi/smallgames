@@ -94,6 +94,7 @@ kaboom({
     width: 768,
     height: 360,
     background: [0,0,0],
+    root: document.getElementById('kaboomParent'),
 });
 
 
