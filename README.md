@@ -19,7 +19,7 @@ Un classement est établi par jeu, et un classement général est aussi maintenu
 
 ## Interface
 
-_À faire avec images_
+[Page d'accueil](/smallgames/public/images/readme/home.png)
 
 ## Base de donées
 
