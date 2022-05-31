@@ -15,7 +15,7 @@ Un jeu coopératif à deux joueurs. Le premier joueur a un mot et 9 images propo
 Le classique réinventé! En utilisant sa souris ou son trackpad, le joueur déplace le paddle et fait rebondir une balle. L'objectif: détruire tous les blocs! Attention, la balle accélère à chaque fois qu'elle touche le paddle. De temps à autre, des petits cœurs apparaissent à la destruction d'un bloc. Ceux-ci vous permettent de récupérer des vies!
 
 ### Classement
-Un classement est établi par jeu, et un classement général est aussi maintenu. Ceci permet aux utilisateurs de se comparer entre eux, et aussi de se comparer à tous les autres utilisateurs. 
+Un classement est établi par jeu, et un classement général est aussi maintenu. Ceci permet aux amis qui jouent ensemble de se comparer entre eux, et aussi de se comparer à tous les autres utilisateurs. 
 
 ## Interface
 
