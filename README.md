@@ -20,7 +20,32 @@ Un classement est établi par jeu, et un classement général est aussi maintenu
 ## Interface
 
 ![Page d'accueil](/smallgames/public/images/readme/home.png)
-<p style="text-align: center;">La page d'accueil pour les utilisateurs non-connectés, qui leur présente le site et leur permet de se connecter ou de se créer un compte</p>
+La page d'accueil pour les utilisateurs non-connectés, qui leur présente le site et leur permet de se connecter ou de se créer un compte
+
+---
+
+![Page login](/smallgames/public/images/readme/login.png)
+La page de connexion, qui permet de se connecter à son compte. Celle-ci est accompagnée de deux autres pages qui permettent respectivement de créer un compte et de récupérer son mot de passe si on venait à l'oublier.
+
+---
+
+![Page play](/smallgames/public/images/readme/play.png)
+La page _play_, le cœur de l'application, qui accueille les joueurs connectés et leur permet d'accéder rapidement aux jeux et au classement
+
+---
+
+![Page de règles](/smallgames/public/images/readme/rules.png)
+Cette page explique à l'utilisateur les règles du jeu picture it. Une page similaire est disponible pour le jeu bloc destroyer.
+
+---
+
+![Page picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerOne.png)
+L'interface pour le joueur 1 du jeu picture it. En haut de l'écran, le joueur voit le mot qu'il doit faire deviner à son partenaire. Sur la gauche, les 9 images à choix dont il doit en sélectionner 3. Sur la droite, le bouton qui permet de confirmer son choix.
+
+---
+
+![Page bloc Destroyer](/smallgames/public/images/readme/blockDestroyer.png)
+L'interface pour le jeu bloc destroyer. 
 
 
 ## Base de donées
@@ -41,6 +66,8 @@ Les principaux modules Meteor utilisés dans ce projet sont:
 - Accounts-base & Accounts-password (Gestion des comptes utilisateurs)
 - Sweetalert2 (Alertes pop-up stylisées)
 - Kaboom (Développement du jeu block destroyer)
+
+La police de caractères utilisées sur l'ensemble de l'app est **Gordita**, designée par Thomas Gillett.
 
 Certaines libraries et modules utilisés pour le développement sont parfois soumis à un copyright par leurs auteurs respectifs.
 
