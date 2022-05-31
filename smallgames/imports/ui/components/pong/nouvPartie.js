@@ -7,7 +7,7 @@ import { Session } from 'meteor/session'
 
 
 Template.nouvPartie.events({
-    "click .game"(){
+    "click .goBack"(){
         /* let scorePong1 = Session.get("ScorePong")
         Meteor.call("ajouterScorePong", scorePong1) */
         FlowRouter.go("/pong");
@@ -93,7 +93,7 @@ Template.nouvPartie.onRendered(function () {
 kaboom({
     width: 768,
     height: 360,
-    background: [0,0,0]
+    background: [0,0,0],
 });
 
 
