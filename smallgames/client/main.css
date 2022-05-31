@@ -379,6 +379,16 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+.blockFull {
+  width: 100%;
+  border-radius: 20px;
+  border: 0.5px solid #010101;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  display: inline-block;
+  padding: 0 0 10px 10px;
+  transition: 0.3s ease-in-out;
+}
+
 .game:hover {
   transform: scale(1.01);
   transition: 0.3s ease-in-out;
@@ -563,4 +573,43 @@ body {
   top:0;
   right:0;
   font-family: Gordi;
+}
+
+/* ----------
+/* 5. LEADERBOARD
+/* ---------- */
+
+.leaderboardMainContainer {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  height: 100%;
+}
+
+.leaderboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.leaderboardList {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  padding-right: 10px;
+  display: block;
+  margin-right: auto;
+}
+
+.leaderboardList li {
+  margin: 5px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+
+}
+
+.listElement {
+
 }

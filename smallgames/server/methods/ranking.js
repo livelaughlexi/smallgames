@@ -13,6 +13,15 @@ function randomUsername(){
     let result = Math.ceil(Math.random()*500);
     return result;
   }
+  /*
+  function randomUsernameCorrect(){
+    let randomUsername = '';
+    let mots = ['Oiseau', 'Chat', 'Cheval', 'Lion', 'Singe'];
+    let couleurs = ['Vert', 'Bleu', 'Jaune', 'Violet', 'Orange', 'Gris', 'Noir', ];
+    
+    randomUsername += 
+  }
+  */
 
 Meteor.methods({
 //methods test pour vérifier la fonctionnalité du leaderboard

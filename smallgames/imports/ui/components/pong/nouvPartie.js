@@ -323,7 +323,7 @@ onDraw(() => {
 scene("lose", ({ score }) => {
 
     add([
-        text(`GAME OVER\n\nYOUR FINAL SCORE WAS ${score}`, {
+        text(`GAME OVER\n\nTON SCORE FINALE EST ${score}`, {
             size: 32,
             width: width(),
             font: "breakout"
@@ -332,7 +332,7 @@ scene("lose", ({ score }) => {
     ]);
 
     add([
-        text(`PRESS SPACE TO RESTART`, {
+        text(`APPUIE SUR ESPACE POUR RELANCER`, {
             size: 16,
             width: width(),
             font: "breakout"
@@ -349,7 +349,7 @@ scene("lose", ({ score }) => {
 scene("win", ({ score }) => {
 
     add([
-        text(`CONGRATULATIONS, YOU WIN!\n\nYOUR FINAL SCORE WAS ${score}`, {
+        text(`FELICITATION, TU AS GAGNE!\n\nTON SCORE FINAL EST ${score}`, {
             size: 32,
             width: width(),
             font: "breakout",
@@ -358,16 +358,18 @@ scene("win", ({ score }) => {
     ]);
 
     add([
-        text(`PRESS ANY KEY TO RESTART`, {
+        text(`APPUIE SUR ESPACE POUR RELANCER`, {
             size: 16,
             width: width(),
             font: "breakout"
         }),
         pos(width()/2, height()*(3/4)),
     ]);
-    
-    onKeyPress(start);
-    onMousePress(start);
+    Session.set("ScorePong", score);
+    let scorePong1 = Session.get("ScorePong")
+    Meteor.call("ajouterScorePong", scorePong1)
+    console.log(scorePong1);
+    onKeyPress("space", start);
 });
 
 
