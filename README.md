@@ -1,11 +1,8 @@
 # 🎮 smallgames v1.0
----
 
 Projet réalisé par Sébastien Franzone, André Santiago, Marie Fasel et Lennox Fretz dans le cadre du cours _Programmation pour Internet II - Meteor.js_, donné par Loïc Cattani et Loris Rimaz.
 
 Université de Lausanne - Faculté de Lettres - Section des sciences du langage et de l'information - Semestre de printemps 2022
-
----
 
 ## Description
 
@@ -20,19 +17,13 @@ Le classique réinventé! En utilisant sa souris ou son trackpad, le joueur dép
 ### Classement
 Un classement est établi par jeu, et un classement général est aussi maintenu. Ceci permet aux utilisateurs de se comparer entre eux, et aussi de se comparer à tous les autres utilisateurs. 
 
----
-
 ## Interface
 
 _À faire avec images_
 
----
-
 ## Base de donées
 
 _À faire_
-
----
 
 ## License
 Ce programme est un logiciel gratuit.
