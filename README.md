@@ -1,4 +1,4 @@
-# 🎮 smallgames v.0.3.5
+# 🎮 smallgames v0.3.5
 
 Projet réalisé par Sébastien Franzone, André Santiago, Marie Fasel et Lennox Fretz dans le cadre du cours _Programmation pour Internet II - Meteor.js_, donné par Loïc Cattani et Loris Rimaz.
 
