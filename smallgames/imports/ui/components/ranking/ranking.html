@@ -1,5 +1,5 @@
 <template name="ranking">
-    <ul class="leaderboardList">
+    <ul class="leaderboardList" id="generalRanking">
         {{#each playerNames}}
             <li class="playerName">
                 <div class="listElement">
@@ -12,6 +12,7 @@
             </li>
         {{/each}}
     </ul>
+
     <!--
         <button class="testMethod">Créer un joueur aléatoire avec un score aléatoire</button>
         <button class="give12PointsToCurrentAccountPong">Donner 12 points au compte connecté actuellement, score pong</button>

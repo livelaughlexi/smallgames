@@ -8,10 +8,10 @@ Université de Lausanne - Faculté de Lettres - Section des sciences du langage 
 
 Le projet smallgames a pour but de proposer une plateforme de mini-jeux en ligne, permettent des rapides sessions de jeu en solo ou entre amis. Le public ciblé est vaste, le projet s'adressant à toutes les personnes qui souhaitent faire des mini-jeux dès qu'ils ont un moment de libre. Le classement permet de fidéliser les joueurs et les encourage à revenir perfectionner leurs scores. 
 
-### picture it
+### Picture it
 Un jeu coopératif à deux joueurs. Le premier joueur a un mot et 9 images proposés devant lui. Il doit en choisir 3 qui vont être envoyées à son partenaire dans le but qu'il devine le mot. Le deuxième joueur a devant lui les trois images choisies par son partenaire, ainsi que 9 propositions de mots. Le joueur a 3 tentatives pour trouver le bon mot. S'il le souhaite, il peut utiliser un poweup, qui lui permet de révéler 3 mauvaises réponses, moyennant une déduction de 25 points au score final.
 
-### block destroyer
+### Block destroyer
 Le classique réinventé! En utilisant sa souris ou son trackpad, le joueur déplace le paddle et fait rebondir une balle. L'objectif: détruire tous les blocs! Attention, la balle accélère à chaque fois qu'elle touche le paddle. De temps à autre, des petits cœurs apparaissent à la destruction d'un bloc. Ceux-ci vous permettent de récupérer des vies!
 
 ### Classement
@@ -35,24 +35,38 @@ La page _play_, le cœur de l'application, qui accueille les joueurs connectés 
 ---
 
 ![Page de règles](/smallgames/public/images/readme/rules.png)
-Cette page explique à l'utilisateur les règles du jeu picture it. Une page similaire est disponible pour le jeu bloc destroyer.
+Cette page explique à l'utilisateur les règles du jeu Picture it. Une page similaire est disponible pour le jeu Block destroyer.
 
 ---
 
-![Page picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerOne.png)
-L'interface pour le joueur 1 du jeu picture it. En haut de l'écran, le joueur voit le mot qu'il doit faire deviner à son partenaire. Sur la gauche, les 9 images à choix dont il doit en sélectionner 3. Sur la droite, le bouton qui permet de confirmer son choix.
+![Page Picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerOne.png)
+L'interface pour le joueur 1 du jeu Picture it. En haut de l'écran, le joueur voit le mot qu'il doit faire deviner à son partenaire. Sur la gauche, les 9 images à choix dont il doit en sélectionner 3. Sur la droite, le bouton qui permet de confirmer son choix.
+
+---
+
+![Page Picture it - joueur 1](/smallgames/public/images/readme/pictureItPlayerTwo.png)
+L'interface pour le joueur 2 du jeu Picture it. Sur la gauche, les 3 images choisies par son partenaire ainsi que les 9 propositions de mots. Sur la droite, le nombre de tentatives restantes, l'option d'utiliser un powerup, et le bouton pour confirmer son choix.
+
+---
+
+![Exemple de pop up](/smallgames/public/images/readme/popup.png)
+Exemple de notification _pop-up_, ici pour demander à l'utilisateur de confirmer son choix d'activer son powerup
 
 ---
 
 ![Page bloc Destroyer](/smallgames/public/images/readme/blockDestroyer.png)
-L'interface pour le jeu bloc destroyer. 
+L'interface pour le jeu Block destroyer. 
 
+---
+
+![Page classement](/smallgames/public/images/readme/leaderboard.png)
+La page du classement, qui répertorie le classement général, ainsi que le classement par jeu
 
 ## Base de donées
 
 L'application contient 4 collections MongoDB:
 - La collection _users_ est gérée par les modules de gestion des comptes
-- Les collections _imagesUtilisees_, _source_ et _partiesFinies_ sont utilisées pour le jeu picture it. 
+- Les collections _imagesUtilisees_, _source_ et _partiesFinies_ sont utilisées pour le jeu Picture it. 
 
 ## License
 Ce programme est un logiciel gratuit.
@@ -65,7 +79,7 @@ Les principaux modules Meteor utilisés dans ce projet sont:
 - FlowRouter (Gestion des URL)
 - Accounts-base & Accounts-password (Gestion des comptes utilisateurs)
 - Sweetalert2 (Alertes pop-up stylisées)
-- Kaboom (Développement du jeu block destroyer)
+- Kaboom (Développement du jeu Block destroyer)
 
 La police de caractères utilisées sur l'ensemble de l'app est **Gordita**, designée par Thomas Gillett.
 

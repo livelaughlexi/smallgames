@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 Template.commencerPong.events({
     "click .game"(){
         Swal.fire({
-            title: 'Prêt·e à lancer une partie de block destroyer?',
+            title: 'Prêt·e à lancer une partie de Block destroyer?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "C'est parti!",

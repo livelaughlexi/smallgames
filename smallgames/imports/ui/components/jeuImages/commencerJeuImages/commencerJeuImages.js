@@ -18,7 +18,7 @@ Template.commencerJeuImages.onCreated(function(){
 Template.commencerJeuImages.events({
     "click .game"(){
         Swal.fire({
-            title: 'Prêt·e à lancer une partie de picture it?',
+            title: 'Prêt·e à lancer une partie de Picture it?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "C'est parti!",
