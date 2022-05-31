@@ -62,7 +62,7 @@ L'interface pour le jeu Block destroyer.
 ![Page classement](/smallgames/public/images/readme/leaderboard.png)
 La page du classement, qui répertorie le classement général, ainsi que le classement par jeu
 
-## Base de donées
+## Base de données
 
 L'application contient 4 collections MongoDB:
 - La collection _users_ est gérée par les modules de gestion des comptes
