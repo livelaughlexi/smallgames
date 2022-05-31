@@ -3,15 +3,14 @@
     {{> globalHeader}}
     <div class="mainContainer">
         <h1>Bonjour {{currentUser.username}}!</h1>
-        <div class="games">  
-                <div class="game pong">
-                 {{> changePasswordForm}}
+        <div class="blocks">  
+                <div class="blockHalf">
+                    {{> changePasswordForm}}
                 </div>      
-        </div>
-        <div class="games">
-            <div class="game pong">
-                {{> sendEmailVerificationButton}}
-            </div>
+                <div class="blockHalf">
+                    <h2>Vérifier ton adresse mail</h2>
+                    {{> sendEmailVerificationButton}}
+                </div>
         </div>
     </div>
 </template>
