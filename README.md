@@ -48,7 +48,7 @@ L'interface pour le joueur 1 du jeu picture it. En haut de l'écran, le joueur v
 L'interface pour le jeu bloc destroyer. 
 
 
-## Base de donées
+## Base de données
 
 L'application contient 4 collections MongoDB:
 - La collection _users_ est gérée par les modules de gestion des comptes
