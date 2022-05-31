@@ -23,7 +23,9 @@ _À faire avec images_
 
 ## Base de donées
 
-_À faire_
+L'application contient 4 collections MongoDB:
+- La collection _users_ est gérée par les modules de gestion des comptes
+- Les collections _imagesUtilisees_, _source_ et _partiesFinies_ sont utilisées pour le jeu picture it. 
 
 ## License
 Ce programme est un logiciel gratuit.
@@ -32,7 +34,7 @@ smallgames a été développé avec le framework de développement web en Javasc
 
 Les principaux modules Meteor utilisés dans ce projet sont:
 - Blaze Layout (Render des templates)
-- reactiveVar (variables réactives)
+- reactiveVar (Variables réactives)
 - FlowRouter (Gestion des URL)
 - Accounts-base & Accounts-password (Gestion des comptes utilisateurs)
 - Sweetalert2 (Alertes pop-up stylisées)
