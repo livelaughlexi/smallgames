@@ -1,78 +1,52 @@
-# 🎮 smallgames
-![minigames](https://i.pinimg.com/originals/49/96/47/49964743826f910c6d579cb41e843ed3.png)
+# 🎮 smallgames v1.0
 ---
 
-## A new universe of games !
-### Come and join our community and take part in this new adventure
+Projet réalisé par Sébastien Franzone, André Santiago, Marie Fasel et Lennox Fretz dans le cadre du cours _Programmation pour Internet II - Meteor.js_, donné par Loïc Cattani et Loris Rimaz.
 
----
-
-#### Qu'est-ce donc que Small Games ?
-
-"Small Games" est le projet de quatre étudiants de l'université de Lausanne pour un cours de programmation. Il a pour but de mettre à disposition une plateforme sur laquelle sont proposés des mini-jeux, d'y jouer et de pouvoir comparer ses scores avec ceux de ces amis !
-
-Descriptif du projet :
-
-1. Mini-jeux "PvP"
-2. Ranking "All-Time", "Duel"(A 2 ou possibilité de créer des groupes d'affrontement -> fonctionnalité en plus?)
-3. 
+Université de Lausanne - Faculté de Lettres - Section des sciences du langage et de l'information - Semestre de printemps 2022
 
 ---
 
-#### Analyse concurentielle
+## Description
 
-Pros :
+Le projet smallgames a pour but de proposer une plateforme de mini-jeux en ligne, permettent des rapides sessions de jeu en solo ou entre amis. Le public ciblé est vaste, le projet s'adressant à toutes les personnes qui souhaitent faire des mini-jeux dès qu'ils ont un moment de libre. Le classement permet de fidéliser les joueurs et les encourage à revenir perfectionner leurs scores. 
 
-- 
+### picture it
+Un jeu coopératif à deux joueurs. Le premier joueur a un mot et 9 images proposés devant lui. Il doit en choisir 3 qui vont être envoyées à son partenaire dans le but qu'il devine le mot. Le deuxième joueur a devant lui les trois images choisies par son partenaire, ainsi que 9 propositions de mots. Le joueur a 3 tentatives pour trouver le bon mot. S'il le souhaite, il peut utiliser un poweup, qui lui permet de révéler 3 mauvaises réponses, moyennant une déduction de 25 points au score final.
 
-Cons :
+### block destroyer
+Le classique réinventé! En utilisant sa souris ou son trackpad, le joueur déplace le paddle et fait rebondir une balle. L'objectif: détruire tous les blocs! Attention, la balle accélère à chaque fois qu'elle touche le paddle. De temps à autre, des petits cœurs apparaissent à la destruction d'un bloc. Ceux-ci vous permettent de récupérer des vies!
 
-- Enormément d'autres concurrents, il faudrait offrir une énorme palette de jeux, afin d'avoir la possibilité d'entrer dans la course concurrentielle.
-
-#### Fonctionnalités plannifiés
-
-- Créer un compte
-- Matchmaking
-- Implémentation de jeu
-- Association de score par jeu et par joueur
-    - "All Time" ranking pour 1 run (En fonction des minis-jeux)
-    - "All Time" ranking pour toutes les runs additionnées (En fonction des minis-jeux)
-
-#### Meta
-
-Chacun code son mini-jeu avec une cohérence graphique identitique pour tout le site et tous les mini-jeux.
-
-#### Concept UI/UX, wireframes
-
-
-#### Description du MVP
-
-Un ou deux jeux qui fonctionnent correctement sur lesquels 2 utilisateurs peuvent s'affronter avec une table avec les scores. (Loris)
+### Classement
+Un classement est établi par jeu, et un classement général est aussi maintenu. Ceci permet aux utilisateurs de se comparer entre eux, et aussi de se comparer à tous les autres utilisateurs. 
 
 ---
 
-### Mini-Jeux :
+## Interface
 
-1. #### Pictionnary
-        Jeu coop
-        Description : Un joueur a un mot et 9 images proposés devant lui, il doit en choisir 3 qui vont être envoyées à son partenaire dans le but qu'il devine le mot qu'il a devant lui. Il aura la possibilité de "tracer" une seule image dans le but d'aider à deviner le mot, mais cette opération diminue les points gagnés à la fin. (Le joueur a aussi la possibilité de voir les mots que son partenaire va avoir et d'en enlever, toujours contre une diminution de points à la fin.
+_À faire avec images_
 
-        Schema :
-        ![schema](Schema small games.jpeg)
+---
 
-2. #### Pong
-        Description :
-        Ressources : Kaboom JS
+## Base de donées
 
-### Options ajoutables (si le temps le permet) :
+_À faire_
 
-3. #### Temple Run like
-        Description :
-4. #### Quizz
-        Description :
-5. #### Blindtest
-        Description :
-6. #### Memory
-        Description :
-7. #### Jeu des sept familles
-        Description :
+---
+
+## License
+Ce programme est un logiciel gratuit.
+
+smallgames a été développé avec le framework de développement web en Javascript _Meteor_ dans sa version 2.7.2 [meteor.com](https://meteor.com)
+
+Les principaux modules Meteor utilisés dans ce projet sont:
+- Blaze Layout (Render des templates)
+- reactiveVar (variables réactives)
+- FlowRouter (Gestion des URL)
+- Accounts-base & Accounts-password (Gestion des comptes utilisateurs)
+- Sweetalert2 (Alertes pop-up stylisées)
+- Kaboom (Développement du jeu block destroyer)
+
+Certaines libraries et modules utilisés pour le développement sont parfois soumis à un copyright par leurs auteurs respectifs.
+
+Copyright © 2022 - l'équipe de développement de _smallgames_ : Sébastian Franzone, André Santiago, Marie Fasel & Lennox Fretz
