@@ -80,6 +80,8 @@ Les principaux modules Meteor utilisés dans ce projet sont:
 - Sweetalert2 (Alertes pop-up stylisées)
 - Kaboom (Développement du jeu Block destroyer)
 
+Les images utilisées, ainsi que les asssets pour le jeu Block destroyer, proviennent de librairies libres de droit.
+
 La police de caractères utilisées sur l'ensemble de l'app est **Gordita**, designée par Thomas Gillett.
 
 Certaines libraries et modules utilisés pour le développement sont parfois soumis à un copyright par leurs auteurs respectifs.
