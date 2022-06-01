@@ -75,7 +75,6 @@ smallgames a été développé avec le framework de développement web en Javasc
 
 Les principaux modules Meteor utilisés dans ce projet sont:
 - Blaze Layout (Render des templates)
-- reactiveVar (Variables réactives)
 - FlowRouter (Gestion des URL)
 - Accounts-base & Accounts-password (Gestion des comptes utilisateurs)
 - Sweetalert2 (Alertes pop-up stylisées)
